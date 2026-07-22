@@ -1,0 +1,50 @@
+{
+  "name": "vipax-clone",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=18.17.0",
+    "npm": ">=9.6.7"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "audit": "npm audit --omit=dev",
+    "audit:fix": "npm audit fix",
+    "prepare": "husky",
+    "import-images": "node scripts/import-images.js"
+  },
+  "dependencies": {
+    "framer-motion": "^11.15.0",
+    "next": "16.2.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "^16.2.11",
+    "eslint-plugin-security": "^3.0.1",
+    "globals": "^17.7.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3"
+  },
+  "overrides": {
+    "postcss": "8.5.22",
+    "sharp": "0.35.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --write"
+    ]
+  }
+}
