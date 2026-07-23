@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIPAX | Airline Operations Dashboard</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "background": "#f7f9fb",
+                "on-secondary-fixed-variant": "#38485d",
+                "on-tertiary-fixed": "#00201d",
+                "surface-container-highest": "#e0e3e5",
+                "surface-variant": "#e0e3e5",
+                "outline": "#76777d",
+                "primary-fixed": "#dae2fd",
+                "primary-container": "#131b2e",
+                "surface-container-high": "#e6e8ea",
+                "primary": "#000000",
+                "error-container": "#ffdad6",
+                "on-surface": "#191c1e",
+                "on-background": "#191c1e",
+                "tertiary-fixed-dim": "#6bd8cb",
+                "on-surface-variant": "#45464d",
+                "secondary": "#505f76",
+                "surface": "#f7f9fb",
+                "error": "#ba1a1a",
+                "on-error-container": "#93000a",
+                "on-primary-container": "#7c839b",
+                "secondary-fixed-dim": "#b7c8e1",
+                "on-primary-fixed": "#131b2e",
+                "on-secondary": "#ffffff",
+                "on-secondary-container": "#54647a",
+                "inverse-primary": "#bec6e0",
+                "outline-variant": "#c6c6cd",
+                "surface-container-lowest": "#ffffff",
+                "secondary-container": "#d0e1fb",
+                "surface-tint": "#565e74",
+                "inverse-on-surface": "#eff1f3",
+                "surface-container": "#eceef0",
+                "tertiary-container": "#00201d",
+                "surface-dim": "#d8dadc",
+                "secondary-fixed": "#d3e4fe",
+                "on-tertiary-fixed-variant": "#005049",
+                "tertiary": "#000000",
+                "on-secondary-fixed": "#0b1c30",
+                "surface-container-low": "#f2f4f6",
+                "primary-fixed-dim": "#bec6e0",
+                "tertiary-fixed": "#89f5e7",
+                "on-primary": "#ffffff",
+                "inverse-surface": "#2d3133",
+                "on-tertiary-container": "#0c9488",
+                "on-tertiary": "#ffffff",
+                "on-error": "#ffffff",
+                "on-primary-fixed-variant": "#3f465c",
+                "surface-bright": "#f7f9fb"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "container-max": "1440px",
+                "sm": "8px",
+                "xs": "4px",
+                "md": "16px",
+                "lg": "24px",
+                "base": "4px",
+                "xl": "48px",
+                "gutter": "24px"
+            },
+            "fontFamily": {
+                "display-lg": ["Inter"],
+                "label-md": ["Inter"],
+                "body-md": ["Inter"],
+                "mono-data": ["JetBrains Mono"],
+                "body-lg": ["Inter"],
+                "headline-sm": ["Inter"],
+                "headline-md": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .status-chip {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 10px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline sticky top-0 z-50">
+<div class="flex justify-between items-center px-lg py-md w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-xl">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">VIPAX</span>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="font-body-lg text-body-lg text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1 transition-colors" href="#">Dashboard</a>
+<a class="font-body-lg text-body-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Logistics</a>
+<a class="font-body-lg text-body-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Incidents</a>
+<a class="font-body-lg text-body-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Support</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-secondary">search</span>
+<input class="pl-xl pr-md py-xs bg-surface-container-low border border-outline-variant rounded-lg text-body-md focus:ring-2 focus:ring-on-tertiary-container outline-none w-64" placeholder="Search flights, incidents..." type="text"/>
+</div>
+<button class="text-secondary hover:text-primary transition-all scale-95 active:opacity-80">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="flex items-center gap-sm border-l border-outline-variant pl-md ml-sm">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+<span class="hidden lg:inline font-label-md text-label-md text-on-surface">Corporate Login</span>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 w-full max-w-container-max mx-auto">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-[calc(100vh-64px)] sticky top-16 p-md bg-surface-container-low dark:bg-surface-container-highest border-r border-outline-variant w-[280px] shrink-0">
+<div class="mb-xl">
+<div class="flex items-center gap-sm mb-xs">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-headline-sm" style="font-variation-settings: 'FILL' 1">flight_takeoff</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-black text-primary">Fleet Control</h2>
+<p class="text-[10px] uppercase tracking-widest font-bold text-error">Active Incidents: 04</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col gap-xs flex-1">
+<a class="flex items-center gap-md bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-lg px-md py-sm border-l-4 border-primary transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-on-secondary-fixed-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">flight_takeoff</span>
+<span class="font-label-md text-label-md">Live Tracking</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-on-secondary-fixed-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">Passenger Care</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-on-secondary-fixed-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">hotel</span>
+<span class="font-label-md text-label-md">Resource Booking</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-on-secondary-fixed-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">assignment_late</span>
+<span class="font-label-md text-label-md">Incident Logs</span>
+</a>
+</nav>
+<div class="mt-auto pt-md border-t border-outline-variant">
+<button class="w-full py-md bg-primary text-on-primary rounded-lg font-bold text-label-md mb-md flex items-center justify-center gap-sm hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                    Report New Incident
+                </button>
+<div class="flex flex-col gap-xs">
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="font-label-md text-label-md">System Status</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-lg md:p-xl overflow-y-auto bg-background">
+<!-- Dashboard Header & Stats -->
+<div class="mb-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-lg">
+<div>
+<h1 class="font-display-lg text-display-lg text-primary mb-xs">Operations Hub</h1>
+<p class="text-secondary font-body-lg">Real-time status overview for flight VX-402 network.</p>
+</div>
+<div class="flex gap-sm">
+<div class="bg-surface-container-lowest border border-outline-variant px-md py-sm rounded-lg flex items-center gap-sm">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span class="font-mono-data text-mono-data text-on-surface">LIVE: 14:22:08 UTC</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Stats -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between h-32">
+<span class="text-label-md font-label-md text-secondary uppercase tracking-widest">Active Incidents</span>
+<div class="flex items-end justify-between">
+<span class="text-display-lg text-error leading-none">04</span>
+<span class="material-symbols-outlined text-error-container bg-error p-xs rounded-full text-on-error">warning</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between h-32">
+<span class="text-label-md font-label-md text-secondary uppercase tracking-widest">Assistance Requests</span>
+<div class="flex items-end justify-between">
+<span class="text-display-lg text-primary leading-none">128</span>
+<span class="text-on-tertiary-container text-label-md font-bold">+12% vs LW</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between h-32">
+<span class="text-label-md font-label-md text-secondary uppercase tracking-widest">Resource Load</span>
+<div class="flex items-end justify-between">
+<span class="text-display-lg text-primary leading-none">76%</span>
+<div class="w-24 h-2 bg-surface-container rounded-full overflow-hidden mb-sm">
+<div class="bg-on-tertiary-container h-full w-[76%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between h-32">
+<span class="text-label-md font-label-md text-secondary uppercase tracking-widest">On-Time Performance</span>
+<div class="flex items-end justify-between">
+<span class="text-display-lg text-on-tertiary-container leading-none">92.4</span>
+<span class="material-symbols-outlined text-on-tertiary-container">trending_up</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Data Section -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-lg">
+<!-- Live Incident Log (Column 1 & 2) -->
+<div class="xl:col-span-2 space-y-lg">
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="px-lg py-md border-b border-outline-variant flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary">Critical Incident Log</h3>
+<button class="text-on-tertiary-container font-label-md hover:underline">View All Logs</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-lg py-md font-label-md text-label-md text-secondary">ID</th>
+<th class="px-lg py-md font-label-md text-label-md text-secondary">Flight / Origin</th>
+<th class="px-lg py-md font-label-md text-label-md text-secondary">Incident Type</th>
+<th class="px-lg py-md font-label-md text-label-md text-secondary">Severity</th>
+<th class="px-lg py-md font-label-md text-label-md text-secondary">Status</th>
+<th class="px-lg py-md font-label-md text-label-md text-secondary">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-lg py-md font-mono-data text-mono-data">#INC-8821</td>
+<td class="px-lg py-md">
+<div class="font-bold text-primary">VX-102</div>
+<div class="text-xs text-secondary">LHR → JFK</div>
+</td>
+<td class="px-lg py-md text-body-md">Engine Bleed Fault</td>
+<td class="px-lg py-md"><span class="status-chip bg-error-container text-error">Critical</span></td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-sm">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="text-body-md font-bold text-error">ACTIVE</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<button class="p-xs hover:bg-surface-container-high rounded transition-all">
+<span class="material-symbols-outlined text-secondary">open_in_new</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-lg py-md font-mono-data text-mono-data">#INC-8819</td>
+<td class="px-lg py-md">
+<div class="font-bold text-primary">VX-404</div>
+<div class="text-xs text-secondary">CDG → DXB</div>
+</td>
+<td class="px-lg py-md text-body-md">Passenger Medical</td>
+<td class="px-lg py-md"><span class="status-chip bg-secondary-container text-on-secondary-container">Medium</span></td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-sm text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-body-md font-bold">PENDING</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<button class="p-xs hover:bg-surface-container-high rounded transition-all">
+<span class="material-symbols-outlined text-secondary">open_in_new</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-lg py-md font-mono-data text-mono-data">#INC-8790</td>
+<td class="px-lg py-md">
+<div class="font-bold text-primary">VX-221</div>
+<div class="text-xs text-secondary">SIN → SYD</div>
+</td>
+<td class="px-lg py-md text-body-md">Ground Delay (Fueling)</td>
+<td class="px-lg py-md"><span class="status-chip bg-surface-container-highest text-secondary">Low</span></td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-sm text-on-tertiary-container">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="text-body-md font-bold">RESOLVED</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<button class="p-xs hover:bg-surface-container-high rounded transition-all">
+<span class="material-symbols-outlined text-secondary">open_in_new</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Passenger Care / Resource Tracking -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm">
+<div class="flex items-center justify-between mb-lg">
+<h4 class="font-headline-sm text-headline-sm text-primary">Passenger Assistance</h4>
+<span class="material-symbols-outlined text-on-tertiary-container">support_agent</span>
+</div>
+<div class="space-y-md">
+<div class="flex items-center justify-between">
+<span class="text-body-md">Wheelchair Requests</span>
+<span class="font-mono-data text-primary">42</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full w-[80%]"></div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-body-md">Unaccompanied Minors</span>
+<span class="font-mono-data text-primary">12</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[35%]"></div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-body-md">Hotel Vouchers Issued</span>
+<span class="font-mono-data text-primary">284</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-error h-full w-[90%]"></div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm overflow-hidden relative">
+<div class="flex items-center justify-between mb-lg relative z-10">
+<h4 class="font-headline-sm text-headline-sm text-primary">Global Ops Heatmap</h4>
+<span class="material-symbols-outlined text-secondary">public</span>
+</div>
+<div class="h-40 bg-surface-container-low rounded-lg relative overflow-hidden">
+<!-- Map Placeholder with detailed prompt -->
+<div class="bg-cover bg-center w-full h-full opacity-60" data-alt="A highly detailed global flight operations map presented as a minimalist dark digital interface. The continents are subtle slate silhouettes against a dark primary-container background. Thin, glowing cyan and teal lines arc between major cities representing flight paths. Data points and incident markers glow in soft red at specific hubs like London, New York, and Dubai. The lighting is low-key, professional, and evocative of a high-tech control center." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAt6nPeGNasTV7PfbrSXTybftUyiJF_Nl4ijZu7g1dWxu6Fx3ZOGWe49Zd9tN8wh6gHHiWy1CRLrxnwGFIM28eHVmQcWmPYmcXaOn7VryLkteQmNrTiJTZ2sM1fuMUPuEeshiNFmRwvglRYZ1gtllKDg1WIUvSGuNWQG97Wot9MtsfhX3fDchX8ZvvT756AB-fNFr8X3D6b7zuwbnNUdrkHpHRcol3_t_QjcAOq_PYvUqjslU3orFfQIg')"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-surface-container-lowest/80 backdrop-blur-sm px-md py-sm rounded-lg border border-outline-variant">
+<p class="text-label-md font-bold text-primary">Asia-Pacific High Traffic</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Right Sidebar: Live Tracking & Booking Stats -->
+<div class="space-y-lg">
+<section class="bg-primary-container text-on-primary-fixed rounded-xl p-lg shadow-lg relative overflow-hidden">
+
+<div class="relative z-10">
+<h4 class="font-headline-sm text-headline-sm text-on-primary mb-md">Current Priority Flight</h4>
+<div class="flex items-center justify-between mb-lg">
+<div>
+<p class="text-[32px] font-black text-on-primary">VX-102</p>
+<p class="text-on-primary-container text-label-md uppercase">LHR → JFK • B787-9</p>
+</div>
+<div class="text-right">
+<p class="text-on-tertiary-container text-label-md font-bold">ON TIME</p>
+<p class="text-on-primary font-mono-data text-headline-sm">04:15 REM</p>
+</div>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between text-xs text-on-primary-container">
+<span>PROGRESS</span>
+<span>62%</span>
+</div>
+<div class="w-full h-2 bg-on-primary-container/20 rounded-full">
+<div class="bg-on-tertiary-container h-full w-[62%] rounded-full shadow-[0_0_8px_rgba(13,148,136,0.8)]"></div>
+</div>
+</div>
+<div class="mt-lg grid grid-cols-2 gap-sm">
+<div class="bg-on-primary-container/10 p-sm rounded border border-on-primary-container/20">
+<p class="text-[10px] text-on-primary-container uppercase font-bold">Altitude</p>
+<p class="font-mono-data text-on-primary">38,000 FT</p>
+</div>
+<div class="bg-on-primary-container/10 p-sm rounded border border-on-primary-container/20">
+<p class="text-[10px] text-on-primary-container uppercase font-bold">Ground Speed</p>
+<p class="font-mono-data text-on-primary">512 KTS</p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-lg">Resource Booking</h4>
+<div class="space-y-lg">
+<div class="flex items-start gap-md">
+<div class="p-sm bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container">hotel</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-body-md font-bold">Layover Housing</span>
+<span class="text-body-md text-secondary">84/100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full">
+<div class="bg-secondary h-full w-[84%]"></div>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<div class="p-sm bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container">airport_shuttle</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-body-md font-bold">Ground Logistics</span>
+<span class="text-body-md text-secondary">12/20</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full">
+<div class="bg-secondary h-full w-[60%]"></div>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<div class="p-sm bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container">restaurant</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-body-md font-bold">Voucher Services</span>
+<span class="text-body-md text-secondary">1,240 Issued</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full">
+<div class="bg-on-tertiary-container h-full w-[95%]"></div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-lg py-sm border border-outline-variant text-primary rounded-lg font-bold text-label-md hover:bg-surface-container transition-all">
+                            Manage All Resources
+                        </button>
+</section>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-primary-container text-on-primary-container mt-auto">
+<div class="w-full px-lg py-xl flex flex-col md:flex-row justify-between items-center gap-md max-w-container-max mx-auto">
+<div class="flex flex-col gap-xs">
+<span class="text-headline-sm font-headline-sm text-on-primary">VIPAX</span>
+<p class="font-body-md text-body-md opacity-80">© 2024 VIPAX Logistics. EU 261/2004 Compliant Operations.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:opacity-100 underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:opacity-100 underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:opacity-100 underline transition-all" href="#">Regulatory Info</a>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:opacity-100 underline transition-all" href="#">SLA Agreements</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and real-time feel
+        function updateLiveTime() {
+            const timeDisplay = document.querySelector('.font-mono-data.text-on-surface');
+            if (timeDisplay) {
+                const now = new Date();
+                const timeString = now.toISOString().split('T')[1].split('.')[0];
+                timeDisplay.textContent = `LIVE: ${timeString} UTC`;
+            }
+        }
+        setInterval(updateLiveTime, 1000);
+
+        // Simple tab switching mock logic
+        const navItems = document.querySelectorAll('aside nav a');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                navItems.forEach(i => {
+                    i.classList.remove('bg-secondary-container', 'dark:bg-secondary', 'text-on-secondary-container', 'dark:text-on-secondary', 'border-l-4', 'border-primary');
+                    i.classList.add('text-on-surface-variant', 'dark:text-on-secondary-fixed-variant');
+                });
+                item.classList.add('bg-secondary-container', 'dark:bg-secondary', 'text-on-secondary-container', 'dark:text-on-secondary', 'border-l-4', 'border-primary');
+                item.classList.remove('text-on-surface-variant', 'dark:text-on-secondary-fixed-variant');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIPAX | Gestión Logística de Incidencias Aéreas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f7f9fb",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "on-tertiary-fixed": "#00201d",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-variant": "#e0e3e5",
+                    "outline": "#76777d",
+                    "primary-fixed": "#dae2fd",
+                    "primary-container": "#131b2e",
+                    "surface-container-high": "#e6e8ea",
+                    "primary": "#000000",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#191c1e",
+                    "on-background": "#191c1e",
+                    "tertiary-fixed-dim": "#6bd8cb",
+                    "on-surface-variant": "#45464d",
+                    "secondary": "#505f76",
+                    "surface": "#f7f9fb",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#7c839b",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-primary-fixed": "#131b2e",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#54647a",
+                    "inverse-primary": "#bec6e0",
+                    "outline-variant": "#c6c6cd",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#d0e1fb",
+                    "surface-tint": "#565e74",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container": "#eceef0",
+                    "tertiary-container": "#00201d",
+                    "surface-dim": "#d8dadc",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "tertiary": "#000000",
+                    "on-secondary-fixed": "#0b1c30",
+                    "surface-container-low": "#f2f4f6",
+                    "primary-fixed-dim": "#bec6e0",
+                    "tertiary-fixed": "#89f5e7",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary-container": "#0c9488",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface-bright": "#f7f9fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "xl": "48px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "mono-data": ["JetBrains Mono"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "mono-data": ["13px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg selection:bg-secondary-container">
+<!-- Top Navigation Bar -->
+<header class="bg-surface sticky top-0 z-50 border-b border-outline-variant">
+<div class="flex justify-between items-center px-lg py-md w-full max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary">VIPAX</div>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="text-primary border-b-2 border-primary pb-1 font-body-lg" href="#">Dashboard</a>
+<a class="text-secondary hover:text-primary transition-colors font-body-lg" href="#">Logistics</a>
+<a class="text-secondary hover:text-primary transition-colors font-body-lg" href="#">Incidents</a>
+<a class="text-secondary hover:text-primary transition-colors font-body-lg" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-all scale-95 active:opacity-80">notifications</button>
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-all scale-95 active:opacity-80">account_circle</button>
+<button class="hidden md:block bg-primary text-on-primary px-md py-sm rounded-lg font-label-md hover:opacity-90 transition-all">Corporate Login</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative w-full h-[80vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional aerial view of a sleek, modern commercial aircraft parked on a rain-slicked runway at dusk. The lighting is dramatic, with cool blues and sharp whites reflecting off the aircraft's polished surface. The composition is wide and cinematic, emphasizing the scale and precision of high-end aviation logistics. The overall mood is authoritative and calm under pressure." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1vI-DntALwvHA4wZOIKg1oGxie8xqKmcEhFwIhcEsxoMIo-GOYQKBInRLviJSIEZlvWms0CLhyzwLGxpOOHk9HLJ2L8wBKR0LmT0yO9HSSIZnDlrj_3JkeDTJKZQlsctf4HwLhnLZ662Rf_yYv_QDTxpbDYUduvJfnzkgoPmLbwUAIgHl8UaDgHlwdQQy1ePBJVfheE573c8An3xxu4OvYRzWuh1noMd_e4wP1JAL7wP6BaLFKzS81A')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-lg w-full">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-sm bg-on-tertiary-container/20 text-on-tertiary-container px-sm py-xs rounded-full mb-md">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-md text-label-md">EU REGULATION 261/2004 COMPLIANT</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-white mb-md leading-tight">Excelencia en Logística de Contingencias Aéreas.</h1>
+<p class="font-body-lg text-body-lg text-white/80 mb-xl max-w-xl">
+                        VIPAX ofrece soluciones integrales de transporte, alojamiento y restauración para pasajeros afectados por incidencias, garantizando una gestión ágil, profesional y bajo normativa europea.
+                    </p>
+<div class="flex flex-wrap gap-md">
+<button class="bg-[#0D9488] text-white px-xl py-md rounded-lg font-headline-sm hover:brightness-110 transition-all shadow-lg">
+                            Conoce nuestros servicios
+                        </button>
+<button class="border border-white/30 text-white px-xl py-md rounded-lg font-headline-sm hover:bg-white/10 transition-all backdrop-blur-sm">
+                            Gestión de Flotas
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Overview -->
+<section class="py-xl bg-surface-container-low border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="flex flex-col gap-xs">
+<span class="font-label-md text-on-secondary-container">ACTIVE INCIDENTS</span>
+<span class="font-mono-data text-headline-md font-bold text-[#0D9488]">04</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-label-md text-on-secondary-container">PASSENGERS IN CARE</span>
+<span class="font-mono-data text-headline-md font-bold text-primary">1,248</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-label-md text-on-secondary-container">LOGISTICS PARTNERS</span>
+<span class="font-mono-data text-headline-md font-bold text-primary">450+</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-label-md text-on-secondary-container">AVG RESPONSE TIME</span>
+<span class="font-mono-data text-headline-md font-bold text-primary">12min</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Services: Bento Grid -->
+<section class="py-xl max-w-container-max mx-auto px-lg">
+<div class="mb-xl text-center md:text-left">
+<h2 class="font-headline-md text-display-lg-mobile md:text-headline-md text-primary mb-sm">Servicios Especializados</h2>
+<p class="font-body-lg text-secondary max-w-2xl">Soluciones modulares diseñadas para mitigar el impacto operativo de retrasos y cancelaciones.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Transport Service -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl h-[400px] border border-outline-variant hover:border-[#0D9488] transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A fleet of high-end, black executive shuttle buses and luxury minivans lined up precisely at a modern airport terminal. The scene is captured at night with cool, crisp artificial lighting creating long shadows and sharp highlights on the metallic surfaces. The aesthetic is clean, corporate, and highly organized, conveying a sense of efficient transport logistics." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADeedSLbmPrDDHaOgMd4C9gMDtJbvvPYRTJhvFhYAFJM_F6MGDjoDihaH1Z3WGSTBSUWWQbaIpERW295qQ_NSUJq8ENUA6YiIR7MFAko9NZH-IwDtHSp8CPAnc0fi2rlCsQAeO5RFaArfXmZ-XoeWoVtWVvEIH6vcqJSVa9uvzTyuyf_jg1K3iipqhU_KUSNuzp943l-V13ErfbhlTwMVYbUhJZ4Pz2_rnn5EezpFVB81qfMUQHs3EMQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full">
+<span class="bg-[#0D9488] text-white text-label-md px-sm py-xs rounded mb-sm inline-block">TRANSPORT</span>
+<h3 class="font-headline-md text-white mb-sm">Logística de Transporte Terrestre</h3>
+<p class="text-white/70 font-body-md max-w-md">Traslados masivos y ejecutivos con flota propia y red de partners locales, monitorizados en tiempo real mediante nuestra plataforma Live Tracking.</p>
+</div>
+</div>
+<!-- Incident Chip Sidebar Style -->
+<div class="md:col-span-4 bg-primary-container text-white p-lg rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-lg">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-4xl">flight_takeoff</span>
+<span class="bg-error/20 text-error-container text-label-md px-sm py-xs rounded border border-error/30">PRIORITY ALPHA</span>
+</div>
+<h4 class="font-headline-sm mb-md">Cumplimiento Normativo EU 261/2004</h4>
+<p class="text-on-primary-container font-body-md mb-md">Nuestros sistemas están programados para ejecutar automáticamente los protocolos de asistencia obligatoria exigidos por la Unión Europea.</p>
+</div>
+<ul class="space-y-sm">
+<li class="flex items-center gap-sm text-body-md text-on-primary-container">
+<span class="material-symbols-outlined text-[#0D9488] text-[18px]">check_circle</span>
+                            Asistencia inmediata al pasajero
+                        </li>
+<li class="flex items-center gap-sm text-body-md text-on-primary-container">
+<span class="material-symbols-outlined text-[#0D9488] text-[18px]">check_circle</span>
+                            Trazabilidad total de costes
+                        </li>
+</ul>
+</div>
+<!-- Accommodation Service -->
+<div class="md:col-span-6 group relative overflow-hidden rounded-xl h-[400px] border border-outline-variant hover:border-[#0D9488] transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="The elegant, minimalist interior of a 5-star airport hotel lobby. The design features soft warm lighting, natural stone textures, and comfortable designer seating. A professional concierge desk is visible in the background. The atmosphere is calm, quiet, and luxurious, offering a peaceful sanctuary for travelers. The color palette consists of neutral beiges, warm greys, and subtle teal accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNZTWhGtFdXlkCLYzKYF7kW7RwTLtzT1Fkq8CS29cFoRt2UW0GbcQ2iwOH7QYb3iw-sl4gwrqTe0HKFITUSgE5yX80cnejS9bWdEsZgtSxzq-BafuDKT-QfK7h9Ymj4JNPn_DvhRjVzzCn8m96HDOulX3ig030i_-F9JuVK1eQ6x27XwstRUkXTjr1d-MrJUjAtAYPDR-oZHph0OG8foJltVL_qKXrhCjny_9X06qCgg4WuG6SYBkdaA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full">
+<span class="bg-secondary text-white text-label-md px-sm py-xs rounded mb-sm inline-block">ACCOMMODATION</span>
+<h3 class="font-headline-md text-white mb-sm">Gestión de Alojamiento</h3>
+<p class="text-white/70 font-body-md max-w-md">Reserva instantánea en hoteles asociados de 4 y 5 estrellas cercanos a terminales aéreas principales.</p>
+</div>
+</div>
+<!-- Restoration Service -->
+<div class="md:col-span-6 group relative overflow-hidden rounded-xl h-[400px] border border-outline-variant hover:border-[#0D9488] transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="High-quality gourmet catering services for airline passengers. Close-up of modern, sustainable food packaging with fresh, healthy meals prepared for distribution. The lighting is bright and appetizing, set in a clean, professional food service environment. The style is contemporary corporate, emphasizing quality and care in restoration services during transit delays." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHEkoIOY96h26KcKVxVidy9tUyaeR8O-0WNU9ZklThrVzO-xIvf2axuIsp_kBycAcfyD_oPELI-pZiKN-W7J0c4nNnuAPVGSPYmQlMVbEsLU_WQYnLfotNDTUZOWbc9Dsl22qlozrjxz_MWWsqe3nPaZqB_KnlMv0Oym-m7YvYBgOKT4-PnKZzLYzsFCZNjbVSWx4NHqEoR45uXEBhPB8Z58nfolRx2RrLXQxHt2ZOP2o5AT1Y_HQdMQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full">
+<span class="bg-secondary text-white text-label-md px-sm py-xs rounded mb-sm inline-block">RESTORATION</span>
+<h3 class="font-headline-md text-white mb-sm">Servicios de Restauración</h3>
+<p class="text-white/70 font-body-md max-w-md">Vouchers digitales y catering directo para asegurar el bienestar alimentario de los pasajeros durante la espera.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust & Compliance -->
+<section class="bg-white py-xl border-y border-outline-variant">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="flex flex-col md:flex-row items-center gap-xl">
+<div class="flex-1">
+<h2 class="font-headline-md text-primary mb-md">Confianza Corporativa y Rigor</h2>
+<div class="space-y-lg">
+<div class="flex gap-md">
+<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-primary mb-xs">Protocolos de Alta Seguridad</h4>
+<p class="text-secondary font-body-md">Gestión segura de datos de pasajeros y activos logísticos bajo estándares internacionales.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">query_stats</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-primary mb-xs">Reporting en Tiempo Real</h4>
+<p class="text-secondary font-body-md">Dashboards personalizados para aerolíneas con métricas detalladas de satisfacción y costes.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full">
+<div class="glass-card p-lg rounded-xl border-l-4 border-[#0D9488]">
+<h3 class="font-headline-sm text-primary mb-md">SLA Garantizado</h3>
+<div class="space-y-md">
+<div class="flex justify-between items-center border-b border-outline-variant pb-sm">
+<span class="text-secondary font-body-md">Response Time</span>
+<span class="font-mono-data text-primary">&lt; 15 mins</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant pb-sm">
+<span class="text-secondary font-body-md">Fleet Availability</span>
+<span class="font-mono-data text-primary">99.9%</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant pb-sm">
+<span class="text-secondary font-body-md">EU 261 Compliance</span>
+<span class="font-mono-data text-[#0D9488] font-bold">CERTIFIED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl bg-primary-container relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-lg text-center">
+<h2 class="font-display-lg text-white mb-md">Optimice su respuesta ante contingencias.</h2>
+<p class="text-on-primary-container text-body-lg mb-xl max-w-2xl mx-auto">
+                    VIPAX se integra con sus sistemas operativos para actuar de forma autónoma cuando el tiempo es crítico.
+                </p>
+<button class="bg-white text-primary px-xl py-md rounded-lg font-headline-sm hover:bg-surface-container-highest transition-all">
+                    Solicitar Demo Corporativa
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container">
+<div class="w-full px-lg py-xl flex flex-col md:flex-row justify-between items-center gap-md max-w-container-max mx-auto">
+<div class="flex flex-col gap-sm">
+<div class="text-headline-sm font-headline-sm text-on-primary">VIPAX</div>
+<p class="text-on-primary-container font-body-md opacity-80">© 2024 VIPAX Logistics. EU 261/2004 Compliant Operations.</p>
+</div>
+<div class="flex flex-wrap gap-lg justify-center">
+<a class="text-on-primary-container font-body-md opacity-80 hover:opacity-100 underline" href="#">Terms of Service</a>
+<a class="text-on-primary-container font-body-md opacity-80 hover:opacity-100 underline" href="#">Privacy Policy</a>
+<a class="text-on-primary-container font-body-md opacity-80 hover:opacity-100 underline" href="#">Regulatory Info</a>
+<a class="text-on-primary-container font-body-md opacity-80 hover:opacity-100 underline" href="#">SLA Agreements</a>
+</div>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-on-primary-container opacity-60">language</span>
+<span class="material-symbols-outlined text-on-primary-container opacity-60">share</span>
+</div>
+</div>
+</footer>
+<!-- Side Navigation (Mobile Hidden, Desk View) - Implemented as semantic shell -->
+<aside class="hidden lg:flex flex-col h-screen sticky top-0 p-md bg-surface-container-low border-r border-outline-variant fixed left-0 w-[280px] z-40" style="display: none;">
+<!-- This is a placeholder for the side nav if required for internal dash views -->
+</aside>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.classList.add('scale-95');
+                setTimeout(() => el.classList.remove('scale-95'), 150);
+            });
+        });
+
+        // Simple scroll reveal
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
