@@ -22,7 +22,7 @@
 .title {
   font-size: var(--text-3xl);
   font-weight: var(--weight-bold);
-  color: var(--color-dark);
+  color: var(--color-heading);
   margin-bottom: var(--space-4);
 }
 

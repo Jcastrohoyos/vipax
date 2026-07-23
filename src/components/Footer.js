@@ -99,6 +99,22 @@ export default function Footer() {
           </div>
         </ScrollReveal>
 
+        <div className={styles.mapSection}>
+          <div className={styles.mapWrapper}>
+            <iframe
+              className={styles.mapIframe}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.5!2d-3.564378939981026!3d40.489928334043675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228a4e2c5b7b3%3A0x4055d80e8a3b5b5b!2sAeropuerto%20Adolfo%20Su%C3%A1rez%20Madrid-Barajas!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ubicación VIPAX - Aeropuerto Madrid-Barajas"
+            />
+          </div>
+        </div>
+
         <div className={styles.bottom}>
           <p className={styles.copyright}>
             &copy; {new Date().getFullYear()} VIPAX. Todos los derechos reservados.

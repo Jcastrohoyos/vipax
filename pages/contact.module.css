@@ -29,7 +29,7 @@
 .title {
   font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
   font-weight: var(--weight-extrabold);
-  color: var(--color-dark);
+  color: var(--color-heading);
   line-height: 1.2;
   margin-bottom: var(--space-4);
 }
@@ -69,7 +69,7 @@
 .infoTitle {
   font-size: var(--text-2xl);
   font-weight: var(--weight-bold);
-  color: var(--color-dark);
+  color: var(--color-heading);
   margin-bottom: var(--space-3);
 }
 
@@ -137,7 +137,7 @@ a.infoCard {
 .infoValue {
   font-size: var(--text-base);
   font-weight: var(--weight-semibold);
-  color: var(--color-dark);
+  color: var(--color-heading);
 }
 
 .social {
@@ -147,7 +147,7 @@ a.infoCard {
 .socialTitle {
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
-  color: var(--color-dark);
+  color: var(--color-heading);
   margin-bottom: var(--space-3);
 }
 
@@ -184,7 +184,7 @@ a.infoCard {
 .formTitle {
   font-size: var(--text-xl);
   font-weight: var(--weight-bold);
-  color: var(--color-dark);
+  color: var(--color-heading);
   margin-bottom: var(--space-8);
 }
 

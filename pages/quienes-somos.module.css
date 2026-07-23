@@ -29,7 +29,7 @@
 .title {
   font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
   font-weight: var(--weight-extrabold);
-  color: var(--color-dark);
+  color: var(--color-heading);
   line-height: 1.2;
   margin-bottom: var(--space-4);
 }
@@ -67,7 +67,7 @@
 .aboutTitle {
   font-size: var(--text-3xl);
   font-weight: var(--weight-bold);
-  color: var(--color-dark);
+  color: var(--color-heading);
   margin-bottom: var(--space-5);
 }
 
@@ -79,7 +79,7 @@
 }
 
 .aboutText strong {
-  color: var(--color-dark);
+  color: var(--color-heading);
 }
 
 .image {
@@ -109,7 +109,7 @@
 .valuesTitle {
   font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl));
   font-weight: var(--weight-extrabold);
-  color: var(--color-dark);
+  color: var(--color-heading);
   line-height: 1.2;
   margin-bottom: var(--space-4);
 }
@@ -154,7 +154,7 @@
 .valueTitle {
   font-size: var(--text-xl);
   font-weight: var(--weight-bold);
-  color: var(--color-dark);
+  color: var(--color-heading);
   margin-bottom: var(--space-3);
 }
 
@@ -179,7 +179,7 @@
 .ctaTitle {
   font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
   font-weight: var(--weight-bold);
-  color: var(--color-dark);
+  color: var(--color-heading);
   margin-bottom: var(--space-4);
 }
 
