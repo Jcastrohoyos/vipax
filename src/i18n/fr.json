@@ -3,6 +3,7 @@
     "home": "Accueil",
     "about": "À propos",
     "services": "Services",
+    "calculator": "Calculateur",
     "contact": "Contact",
     "contactCta": "Contacter"
   },
@@ -308,6 +309,7 @@
     "currency": "EUR",
     "eligible": "Vous avez droit à une indemnisation !",
     "notEligible": "Désolé, vous ne remplissez pas les conditions pour une indemnisation.",
+    "selectOption": "Sélectionner une option",
     "issues": {
       "cancellation": "Annulation de vol",
       "delay": "Retard de plus de 3 heures",
@@ -319,6 +321,29 @@
       "medium": "1 500 - 3 500 km",
       "long": "Plus de 3 500 km"
     },
-    "info": "L'indemnisation varie selon la distance du vol et le temps de retard. Ce calcul est indicatif."
+    "info": "L'indemnisation varie selon la distance du vol et le temps de retard. Ce calcul est indicatif.",
+    "pageTag": "Calculateur d'indemnisation",
+    "infoTitle": "Quand avez-vous droit à une indemnisation ?",
+    "infoText1": "Selon le Règlement européen 261/2004, les passagers aériens ont droit à une indemnisation en cas d'annulation de vol, de retard de plus de 3 heures ou de refus d'embarquement pour surréservation.",
+    "infoText2": "Le montant de l'indemnisation dépend de la distance du vol et ne dépend pas du prix du billet. C'est un droit que toutes les compagnies aériennes doivent respecter.",
+    "infoText3": "Si vous pensez avoir droit à une indemnisation, utilisez notre calculateur ou contactez-nous pour des conseils personnalisés.",
+    "rulesTitle": "Quand pouvez-vous réclamer ?",
+    "rules": {
+      "r1": "Annulation de vol sans préavis de 14 jours",
+      "r2": "Retard de plus de 3 heures à la destination finale",
+      "r3": "Refus d'embarquement pour surréservation",
+      "r4": "Perte de connexion due au retard du premier vol"
+    },
+    "amountsTitle": "Montants d'indemnisation",
+    "table": {
+      "distance": "Distance du vol",
+      "amount": "Indemnisation"
+    }
+  },
+  "seo": {
+    "calculator": {
+      "title": "Calculateur d'indemnisation - VIPAX",
+      "description": "Calculez si vous avez droit à une indemnisation pour annulation ou retard de vol selon le Règlement européen 261/2004."
+    }
   }
 }

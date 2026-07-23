@@ -1,5 +1,6 @@
 import Header from './Header'
 import Footer from './Footer'
+import WhatsAppButton from './WhatsAppButton'
 import styles from './Layout.module.css'
 
 export default function Layout({ children, fullWidth = false }) {
@@ -10,6 +11,7 @@ export default function Layout({ children, fullWidth = false }) {
         {children}
       </div>
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

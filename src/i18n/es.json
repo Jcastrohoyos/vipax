@@ -3,6 +3,7 @@
     "home": "Inicio",
     "about": "Quiénes somos",
     "services": "Servicios",
+    "calculator": "Calculadora",
     "contact": "Contacto",
     "contactCta": "Contactar"
   },
@@ -307,6 +308,7 @@
     "currency": "EUR",
     "eligible": "¡Tienes derecho a compensación!",
     "notEligible": "Lo sentimos, no cumples los requisitos para compensación.",
+    "selectOption": "Seleccionar opción",
     "issues": {
       "cancellation": "Cancelación de vuelo",
       "delay": "Retraso mayor de 3 horas",
@@ -318,6 +320,29 @@
       "medium": "1.500 - 3.500 km",
       "long": "Más de 3.500 km"
     },
-    "info": "La compensación varía según la distancia del vuelo y el tiempo de retraso. Este cálculo es orientativo."
+    "info": "La compensación varía según la distancia del vuelo y el tiempo de retraso. Este cálculo es orientativo.",
+    "pageTag": "Calculadora de compensación",
+    "infoTitle": "¿Cuándo tienes derecho a compensación?",
+    "infoText1": "Según el Reglamento Europeo 261/2004, los pasajeros aéreos tienen derecho a compensación en caso de cancelación de vuelo, retraso superior a 3 horas o denegación de embarque por overbooking.",
+    "infoText2": "La cantidad de compensación depende de la distancia del vuelo y no depende del precio del billete. Es un derecho que todas las aerolíneas deben cumplir.",
+    "infoText3": "Si crees que puedes tener derecho a compensación, utiliza nuestra calculadora o contacta con nosotros para una asesoría personalizada.",
+    "rulesTitle": "¿Cuándo puedes reclamar?",
+    "rules": {
+      "r1": "Cancelación de vuelo sin aviso previo de 14 días",
+      "r2": "Retraso de más de 3 horas en el destino final",
+      "r3": "Denegación de embarque por overbooking",
+      "r4": "Pérdida de conexión por retraso del primer vuelo"
+    },
+    "amountsTitle": "Cantidades de compensación",
+    "table": {
+      "distance": "Distancia del vuelo",
+      "amount": "Compensación"
+    }
+  },
+  "seo": {
+    "calculator": {
+      "title": "Calculadora de Compensación - VIPAX",
+      "description": "Calcula si tienes derecho a compensación por cancelación o retraso de vuelo según el Reglamento Europeo 261/2004."
+    }
   }
 }

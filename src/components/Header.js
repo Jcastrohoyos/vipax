@@ -55,6 +55,7 @@ export default function Header() {
     { href: '/', label: t('nav.home') },
     { href: '/quienes-somos', label: t('nav.about') },
     { href: '/services', label: t('nav.services') },
+    { href: '/calculator', label: t('nav.calculator') },
     { href: '/contact', label: t('nav.contact') },
   ]
 

@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About us",
     "services": "Services",
+    "calculator": "Calculator",
     "contact": "Contact",
     "contactCta": "Contact"
   },
@@ -309,6 +310,7 @@
     "currency": "EUR",
     "eligible": "You are entitled to compensation!",
     "notEligible": "Sorry, you do not meet the requirements for compensation.",
+    "selectOption": "Select option",
     "issues": {
       "cancellation": "Flight cancellation",
       "delay": "Delay over 3 hours",
@@ -320,6 +322,29 @@
       "medium": "1,500 - 3,500 km",
       "long": "More than 3,500 km"
     },
-    "info": "Compensation varies depending on flight distance and delay time. This calculation is for guidance only."
+    "info": "Compensation varies depending on flight distance and delay time. This calculation is for guidance only.",
+    "pageTag": "Compensation calculator",
+    "infoTitle": "When are you entitled to compensation?",
+    "infoText1": "Under European Regulation 261/2004, air passengers are entitled to compensation in case of flight cancellation, delay of more than 3 hours, or denied boarding due to overbooking.",
+    "infoText2": "The compensation amount depends on the flight distance and is not based on the ticket price. It is a right that all airlines must comply with.",
+    "infoText3": "If you think you may be entitled to compensation, use our calculator or contact us for personalized advice.",
+    "rulesTitle": "When can you claim?",
+    "rules": {
+      "r1": "Flight cancellation without 14 days advance notice",
+      "r2": "Delay of more than 3 hours at final destination",
+      "r3": "Denied boarding due to overbooking",
+      "r4": "Missed connection due to delay of first flight"
+    },
+    "amountsTitle": "Compensation amounts",
+    "table": {
+      "distance": "Flight distance",
+      "amount": "Compensation"
+    }
+  },
+  "seo": {
+    "calculator": {
+      "title": "Compensation Calculator - VIPAX",
+      "description": "Calculate if you are entitled to compensation for flight cancellation or delay under European Regulation 261/2004."
+    }
   }
 }
