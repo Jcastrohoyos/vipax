@@ -278,6 +278,10 @@
     "contact": {
       "title": "Contact - VIPAX",
       "description": "Contact VIPAX for immediate air assistance. Adolfo Suárez Madrid-Barajas Airport. Available 24/7."
+    },
+    "calculator": {
+      "title": "Compensation Calculator - VIPAX",
+      "description": "Calculate if you are entitled to compensation for flight cancellation or delay under European Regulation 261/2004."
     }
   },
   "whatsapp": {
@@ -339,12 +343,6 @@
     "table": {
       "distance": "Flight distance",
       "amount": "Compensation"
-    }
-  },
-  "seo": {
-    "calculator": {
-      "title": "Compensation Calculator - VIPAX",
-      "description": "Calculate if you are entitled to compensation for flight cancellation or delay under European Regulation 261/2004."
     }
   }
 }

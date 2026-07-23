@@ -277,6 +277,10 @@
     "contact": {
       "title": "Contact - VIPAX",
       "description": "Contactez VIPAX pour une assistance aérienne immédiate. Aéroport Adolfo Suárez Madrid-Barajas. Disponible 24/7."
+    },
+    "calculator": {
+      "title": "Calculateur d'indemnisation - VIPAX",
+      "description": "Calculez si vous avez droit à une indemnisation pour annulation ou retard de vol selon le Règlement européen 261/2004."
     }
   },
   "whatsapp": {
@@ -338,12 +342,6 @@
     "table": {
       "distance": "Distance du vol",
       "amount": "Indemnisation"
-    }
-  },
-  "seo": {
-    "calculator": {
-      "title": "Calculateur d'indemnisation - VIPAX",
-      "description": "Calculez si vous avez droit à une indemnisation pour annulation ou retard de vol selon le Règlement européen 261/2004."
     }
   }
 }
