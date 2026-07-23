@@ -276,6 +276,10 @@
     "contact": {
       "title": "Contacto - VIPAX",
       "description": "Contacta con VIPAX para asistencia aérea inmediata. Aeropuerto Adolfo Suárez Madrid-Barajas. Disponible 24/7."
+    },
+    "calculator": {
+      "title": "Calculadora de Compensación - VIPAX",
+      "description": "Calcula si tienes derecho a compensación por cancelación o retraso de vuelo según el Reglamento Europeo 261/2004."
     }
   },
   "whatsapp": {
@@ -337,12 +341,6 @@
     "table": {
       "distance": "Distancia del vuelo",
       "amount": "Compensación"
-    }
-  },
-  "seo": {
-    "calculator": {
-      "title": "Calculadora de Compensación - VIPAX",
-      "description": "Calcula si tienes derecho a compensación por cancelación o retraso de vuelo según el Reglamento Europeo 261/2004."
     }
   }
 }
