@@ -277,5 +277,48 @@
       "title": "Contact - VIPAX",
       "description": "Contactez VIPAX pour une assistance aérienne immédiate. Aéroport Adolfo Suárez Madrid-Barajas. Disponible 24/7."
     }
+  },
+  "whatsapp": {
+    "tooltip": "Besoin d'aide ? Écrivez-nous",
+    "status": "En ligne habituellement",
+    "welcome": "Bonjour ! 👋 Comment pouvons-nous vous aider ? Sélectionnez une option ou écrivez-nous directement.",
+    "startChat": "Démarrer le chat",
+    "defaultMessage": "Bonjour, je souhaite recevoir des informations sur les services de VIPAX.",
+    "quick": {
+      "flight": "Incident de vol",
+      "hotel": "Réservation hôtelière",
+      "transport": "Transport",
+      "general": "Demande générale"
+    },
+    "messages": {
+      "flight": "Bonjour, j'ai un incident de vol et j'ai besoin d'assistance. Pouvez-vous m'aider ?",
+      "hotel": "Bonjour, je dois effectuer une réservation hôtelière pour des passagers affectés.",
+      "transport": "Bonjour, j'ai besoin d'informations sur les services de transport terrestre.",
+      "general": "Bonjour, je souhaite recevoir des informations sur les services de VIPAX."
+    }
+  },
+  "calculator": {
+    "title": "Calculateur d'indemnisation",
+    "subtitle": "Vérifiez si vous avez droit à une indemnisation selon le Règlement européen 261/2004",
+    "flightDistance": "Distance du vol",
+    "delayHours": "Heures de retard",
+    "issueType": "Type d'incident",
+    "calculate": "Calculer l'indemnisation",
+    "result": "Indemnisation estimée",
+    "currency": "EUR",
+    "eligible": "Vous avez droit à une indemnisation !",
+    "notEligible": "Désolé, vous ne remplissez pas les conditions pour une indemnisation.",
+    "issues": {
+      "cancellation": "Annulation de vol",
+      "delay": "Retard de plus de 3 heures",
+      "deniedBoarding": "Refus d'embarquement",
+      "missedConnection": "Perte de connexion"
+    },
+    "distances": {
+      "short": "Moins de 1 500 km",
+      "medium": "1 500 - 3 500 km",
+      "long": "Plus de 3 500 km"
+    },
+    "info": "L'indemnisation varie selon la distance du vol et le temps de retard. Ce calcul est indicatif."
   }
 }

@@ -276,5 +276,48 @@
       "title": "Contacto - VIPAX",
       "description": "Contacta con VIPAX para asistencia aérea inmediata. Aeropuerto Adolfo Suárez Madrid-Barajas. Disponible 24/7."
     }
+  },
+  "whatsapp": {
+    "tooltip": "¿Necesitas ayuda? Escríbenos",
+    "status": "En línea usualmente",
+    "welcome": "Hola! 👋 ¿Cómo podemos ayudarte? Selecciona una opción o escríbenos directamente.",
+    "startChat": "Iniciar chat",
+    "defaultMessage": "Hola, me gustaría recibir información sobre los servicios de VIPAX.",
+    "quick": {
+      "flight": "Incidencia de vuelo",
+      "hotel": "Reserva hotelera",
+      "transport": "Transporte",
+      "general": "Consulta general"
+    },
+    "messages": {
+      "flight": "Hola, tengo una incidencia de vuelo y necesito asistencia. ¿Pueden ayudarme?",
+      "hotel": "Hola, necesito hacer una reserva de hotel para pasajeros afectados.",
+      "transport": "Hola, necesito información sobre servicios de transporte terrestre.",
+      "general": "Hola, me gustaría recibir información sobre los servicios de VIPAX."
+    }
+  },
+  "calculator": {
+    "title": "Calculadora de Compensación",
+    "subtitle": "Comprueba si tienes derecho a compensación según el Reglamento Europeo 261/2004",
+    "flightDistance": "Distancia del vuelo",
+    "delayHours": "Horas de retraso",
+    "issueType": "Tipo de incidencia",
+    "calculate": "Calcular compensación",
+    "result": "Compensación estimada",
+    "currency": "EUR",
+    "eligible": "¡Tienes derecho a compensación!",
+    "notEligible": "Lo sentimos, no cumples los requisitos para compensación.",
+    "issues": {
+      "cancellation": "Cancelación de vuelo",
+      "delay": "Retraso mayor de 3 horas",
+      "deniedBoarding": "Denegación de embarque",
+      "missedConnection": "Pérdida de conexión"
+    },
+    "distances": {
+      "short": "Menos de 1.500 km",
+      "medium": "1.500 - 3.500 km",
+      "long": "Más de 3.500 km"
+    },
+    "info": "La compensación varía según la distancia del vuelo y el tiempo de retraso. Este cálculo es orientativo."
   }
 }

@@ -278,5 +278,48 @@
       "title": "Contact - VIPAX",
       "description": "Contact VIPAX for immediate air assistance. Adolfo Suárez Madrid-Barajas Airport. Available 24/7."
     }
+  },
+  "whatsapp": {
+    "tooltip": "Need help? Write to us",
+    "status": "Usually online",
+    "welcome": "Hello! 👋 How can we help you? Select an option or write to us directly.",
+    "startChat": "Start chat",
+    "defaultMessage": "Hello, I would like to receive information about VIPAX services.",
+    "quick": {
+      "flight": "Flight incident",
+      "hotel": "Hotel reservation",
+      "transport": "Transportation",
+      "general": "General inquiry"
+    },
+    "messages": {
+      "flight": "Hello, I have a flight incident and need assistance. Can you help me?",
+      "hotel": "Hello, I need to make a hotel reservation for affected passengers.",
+      "transport": "Hello, I need information about ground transportation services.",
+      "general": "Hello, I would like to receive information about VIPAX services."
+    }
+  },
+  "calculator": {
+    "title": "Compensation Calculator",
+    "subtitle": "Check if you are entitled to compensation under European Regulation 261/2004",
+    "flightDistance": "Flight distance",
+    "delayHours": "Hours of delay",
+    "issueType": "Issue type",
+    "calculate": "Calculate compensation",
+    "result": "Estimated compensation",
+    "currency": "EUR",
+    "eligible": "You are entitled to compensation!",
+    "notEligible": "Sorry, you do not meet the requirements for compensation.",
+    "issues": {
+      "cancellation": "Flight cancellation",
+      "delay": "Delay over 3 hours",
+      "deniedBoarding": "Denied boarding",
+      "missedConnection": "Missed connection"
+    },
+    "distances": {
+      "short": "Less than 1,500 km",
+      "medium": "1,500 - 3,500 km",
+      "long": "More than 3,500 km"
+    },
+    "info": "Compensation varies depending on flight distance and delay time. This calculation is for guidance only."
   }
 }
