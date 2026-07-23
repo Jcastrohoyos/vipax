@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIPAX | Logistics Service Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f7f9fb",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-tertiary-fixed": "#00201d",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-variant": "#e0e3e5",
+                        "outline": "#76777d",
+                        "primary-fixed": "#dae2fd",
+                        "primary-container": "#131b2e",
+                        "surface-container-high": "#e6e8ea",
+                        "primary": "#000000",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191c1e",
+                        "on-background": "#191c1e",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "on-surface-variant": "#45464d",
+                        "secondary": "#505f76",
+                        "surface": "#f7f9fb",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#7c839b",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-primary-fixed": "#131b2e",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#54647a",
+                        "inverse-primary": "#bec6e0",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#d0e1fb",
+                        "surface-tint": "#565e74",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container": "#eceef0",
+                        "tertiary-container": "#00201d",
+                        "surface-dim": "#d8dadc",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "tertiary": "#000000",
+                        "on-secondary-fixed": "#0b1c30",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-fixed-dim": "#bec6e0",
+                        "tertiary-fixed": "#89f5e7",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-container": "#0c9488",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-bright": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "base": "4px",
+                        "xl": "48px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "mono-data": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "mono-data": ["13px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-nav-border { border-left: 4px solid #000000; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="text-on-background overflow-hidden">
+<!-- Main Shell Layout -->
+<div class="flex h-screen w-full">
+<!-- SideNavBar Component -->
+<aside class="hidden lg:flex flex-col h-screen sticky top-0 p-md bg-surface-container-low dark:bg-surface-container-highest border-r border-outline-variant w-[280px] shrink-0">
+<div class="mb-xl px-md">
+<h1 class="font-headline-sm text-headline-sm font-black text-primary">Fleet Control</h1>
+<p class="font-label-md text-label-md text-on-surface-variant mt-xs">Active Incidents: 04</p>
+</div>
+<nav class="flex-1 space-y-sm overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-md text-on-surface-variant dark:text-on-secondary-fixed-variant px-md py-sm hover:bg-surface-container-high transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-on-secondary-fixed-variant px-md py-sm hover:bg-surface-container-high transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">flight_takeoff</span>
+<span>Live Tracking</span>
+</a>
+<!-- Active Tab: Passenger Care -->
+<a class="flex items-center gap-md bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-lg px-md py-sm border-l-4 border-primary transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Passenger Care</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-on-secondary-fixed-variant px-md py-sm hover:bg-surface-container-high transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">hotel</span>
+<span>Resource Booking</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-on-secondary-fixed-variant px-md py-sm hover:bg-surface-container-high transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">assignment_late</span>
+<span>Incident Logs</span>
+</a>
+</nav>
+<div class="mt-auto space-y-sm pt-md">
+<button class="w-full bg-primary text-on-primary py-md px-lg rounded-lg font-label-md text-label-md font-bold transition-all hover:opacity-90 active:scale-95">
+                    Report New Incident
+                </button>
+<div class="border-t border-outline-variant pt-md space-y-xs">
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">check_circle</span>
+<span>System Status</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar Component -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline flex justify-between items-center px-lg py-md w-full sticky top-0 z-10">
+<div class="flex items-center gap-xl">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">VIPAX</span>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="font-body-lg text-body-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="font-body-lg text-body-lg text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1" href="#">Logistics</a>
+<a class="font-body-lg text-body-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Incidents</a>
+<a class="font-body-lg text-body-lg text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Support</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden sm:flex items-center bg-surface-container rounded-full px-md py-xs border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant mr-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md placeholder:text-on-surface-variant w-48" placeholder="Search manifest..." type="text"/>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-sm hover:bg-surface-container rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary">notifications</span>
+</button>
+<button class="p-sm hover:bg-surface-container rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="flex-1 overflow-y-auto p-lg space-y-lg custom-scrollbar">
+<!-- Page Title & Quick Stats -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary">Service Management</h2>
+<p class="font-body-lg text-body-lg text-secondary">Flight VX-204 | LHR to JFK | Grounded (Weather)</p>
+</div>
+<div class="flex gap-sm">
+<button class="flex items-center gap-sm px-lg py-md bg-surface-container-highest text-primary border border-outline-variant rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-all active:scale-95">
+<span class="material-symbols-outlined">download</span>
+                            Export SLA Reports
+                        </button>
+</div>
+</div>
+<!-- Actionable Bento Grid: Service Booking -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Transport Booking Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">local_taxi</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Ground Transport</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Private transfers and shuttle bus coordination for airport vicinity.</p>
+</div>
+<div class="mt-auto pt-md flex items-center justify-between border-t border-outline-variant">
+<span class="font-mono-data text-mono-data text-on-tertiary-container bg-tertiary-fixed-dim/20 px-sm py-xs rounded">12 Avail.</span>
+<button class="text-on-tertiary-container font-label-md text-label-md font-bold hover:underline">Book Transport</button>
+</div>
+</div>
+<!-- Hotel Booking Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-3xl">hotel</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Accommodation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Reserve rooms at partner hotels with automatic vouchering for guests.</p>
+</div>
+<div class="mt-auto pt-md flex items-center justify-between border-t border-outline-variant">
+<span class="font-mono-data text-mono-data text-on-tertiary-container bg-tertiary-fixed-dim/20 px-sm py-xs rounded">45 Rooms</span>
+<button class="text-on-tertiary-container font-label-md text-label-md font-bold hover:underline">Manage Blocks</button>
+</div>
+</div>
+<!-- Meal Vouchers Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">restaurant</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Meal Allowances</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Issue digital vouchers for terminal concessions and hotel dining.</p>
+</div>
+<div class="mt-auto pt-md flex items-center justify-between border-t border-outline-variant">
+<span class="font-mono-data text-mono-data text-on-tertiary-container bg-tertiary-fixed-dim/20 px-sm py-xs rounded">Active</span>
+<button class="text-on-tertiary-container font-label-md text-label-md font-bold hover:underline">Issue Vouchers</button>
+</div>
+</div>
+</div>
+<!-- Main Data Display: Passenger Manifest & Service Status -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="p-lg border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h3 class="font-headline-sm text-headline-sm text-primary">Passenger Manifest &amp; Assigned Logistics</h3>
+<div class="flex gap-sm">
+<button class="px-md py-sm border border-outline-variant rounded-lg font-label-md text-label-md hover:bg-surface-container transition-all">Filter</button>
+<button class="px-md py-sm border border-outline-variant rounded-lg font-label-md text-label-md hover:bg-surface-container transition-all">Sort</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">
+<th class="px-lg py-md font-semibold">PASSENGER NAME</th>
+<th class="px-lg py-md font-semibold">TICKET ID</th>
+<th class="px-lg py-md font-semibold">STATUS</th>
+<th class="px-lg py-md font-semibold">HOTEL</th>
+<th class="px-lg py-md font-semibold">TRANSPORT</th>
+<th class="px-lg py-md font-semibold">VOUCHER</th>
+<th class="px-lg py-md text-right font-semibold">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md font-semibold">Alexander Thorne</td>
+<td class="px-lg py-md font-mono-data">VX-002341</td>
+<td class="px-lg py-md">
+<span class="bg-error-container text-on-error-container px-sm py-xs rounded text-label-md font-bold">WAITING</span>
+</td>
+<td class="px-lg py-md text-on-surface-variant">Hilton Terminal 5</td>
+<td class="px-lg py-md text-on-surface-variant">Shuttle B4</td>
+<td class="px-lg py-md text-on-surface-variant">ISSUED</td>
+<td class="px-lg py-md text-right">
+<button class="p-xs hover:bg-surface-container rounded transition-all"><span class="material-symbols-outlined text-secondary">edit</span></button>
+<button class="p-xs hover:bg-surface-container rounded transition-all ml-xs"><span class="material-symbols-outlined text-secondary">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md font-semibold">Elena Rodriguez</td>
+<td class="px-lg py-md font-mono-data">VX-002356</td>
+<td class="px-lg py-md">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded text-label-md font-bold">IN-TRANSIT</span>
+</td>
+<td class="px-lg py-md text-on-surface-variant">Novotel Plaza</td>
+<td class="px-lg py-md text-on-surface-variant">Exec Car-77</td>
+<td class="px-lg py-md text-on-surface-variant">CLAIMED</td>
+<td class="px-lg py-md text-right">
+<button class="p-xs hover:bg-surface-container rounded transition-all"><span class="material-symbols-outlined text-secondary">edit</span></button>
+<button class="p-xs hover:bg-surface-container rounded transition-all ml-xs"><span class="material-symbols-outlined text-secondary">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md font-semibold">Marcus Chen</td>
+<td class="px-lg py-md font-mono-data">VX-002390</td>
+<td class="px-lg py-md">
+<span class="bg-tertiary-fixed-dim/30 text-on-tertiary-container px-sm py-xs rounded text-label-md font-bold">SETTLED</span>
+</td>
+<td class="px-lg py-md text-on-surface-variant">Crowne Plaza</td>
+<td class="px-lg py-md text-on-surface-variant">Self-Arranged</td>
+<td class="px-lg py-md text-on-surface-variant">EXPIRED</td>
+<td class="px-lg py-md text-right">
+<button class="p-xs hover:bg-surface-container rounded transition-all"><span class="material-symbols-outlined text-secondary">edit</span></button>
+<button class="p-xs hover:bg-surface-container rounded transition-all ml-xs"><span class="material-symbols-outlined text-secondary">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md font-semibold">Sarah Jenkins</td>
+<td class="px-lg py-md font-mono-data">VX-002401</td>
+<td class="px-lg py-md">
+<span class="bg-error-container text-on-error-container px-sm py-xs rounded text-label-md font-bold">WAITING</span>
+</td>
+<td class="px-lg py-md text-on-surface-variant">PENDING</td>
+<td class="px-lg py-md text-on-surface-variant">PENDING</td>
+<td class="px-lg py-md text-on-surface-variant">NOT ISSUED</td>
+<td class="px-lg py-md text-right">
+<button class="p-xs hover:bg-surface-container rounded transition-all"><span class="material-symbols-outlined text-secondary">edit</span></button>
+<button class="p-xs hover:bg-surface-container rounded transition-all ml-xs"><span class="material-symbols-outlined text-secondary">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Map / Location Visualization Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg space-y-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-primary">Service Logistics Map</h3>
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-xs">location_on</span> Heathrow Airport Terminal 5
+                            </span>
+</div>
+<div class="w-full h-80 rounded-lg overflow-hidden border border-outline-variant relative bg-surface-container">
+<!-- Image of map placeholder with detailed data-alt -->
+<img class="w-full h-full object-cover" data-alt="A sophisticated digital logistics map interface of Heathrow Airport, London. The map is designed in a minimalist professional UI style with a palette of deep slate greys, crisp whites, and vibrant teal highlights showing active transport routes. Digital pulsing markers indicate passenger clusters and hotel shuttle locations. The lighting is clean and modern, evoking a real-time data monitoring command center." data-location="London Heathrow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9H7hBryyqvDpJKu28deuGIf2lbdE3wI9sXEcp-kkCjycn4ugKqWEAibd63ywgVlhg2NRA7qJAMrZMD_TK2bIqQDq-_boETariSXQnyZxUX6kvBuhElVoiUenZsq37X6KZej7wiPSXMOYlclpAf6-C15W14y91NXDpyRNyL4zUrImTfs3gN-FXo1G6P-SfxHe00x-HkhcyNRF4Jg8g75g500EUTF__rmRJB4MUuDIxY8rW2VL7-nQIuQ"/>
+<div class="absolute top-md left-md bg-surface-container-lowest/90 backdrop-blur-md p-sm rounded border border-outline-variant text-label-md font-bold flex flex-col gap-xs">
+<div class="flex items-center gap-sm"><span class="w-2 h-2 rounded-full bg-error"></span> Unassigned</div>
+<div class="flex items-center gap-sm"><span class="w-2 h-2 rounded-full bg-secondary"></span> In-Transit</div>
+<div class="flex items-center gap-sm"><span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span> Allocated</div>
+</div>
+</div>
+</div>
+<!-- SLA & Logistics Performance Summary -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-md">SLA Compliance Tracking</h3>
+<div class="space-y-lg">
+<div>
+<div class="flex justify-between text-label-md font-label-md text-on-surface-variant mb-xs">
+<span>Initial Response (Under 15m)</span>
+<span class="font-mono-data text-primary">98%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-on-tertiary-container h-2 rounded-full" style="width: 98%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-md font-label-md text-on-surface-variant mb-xs">
+<span>Hotel Assignment (Under 60m)</span>
+<span class="font-mono-data text-primary">82%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-on-tertiary-container h-2 rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-md font-label-md text-on-surface-variant mb-xs">
+<span>Transport Allocation (Under 45m)</span>
+<span class="font-mono-data text-primary">74%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 74%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-xl p-md bg-secondary-container/20 rounded-lg border border-secondary-container/50 flex items-start gap-md">
+<span class="material-symbols-outlined text-on-secondary-container">info</span>
+<div class="text-body-md text-on-secondary-container">
+<strong>Logistics Alert:</strong> Shuttle service from Heathrow T5 to Hilton is currently delayed by 12 minutes due to heavy traffic. Consider rerouting priority passengers via private car services.
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Component -->
+<footer class="bg-primary-container dark:bg-primary-container w-full px-lg py-xl flex flex-col md:flex-row justify-between items-center gap-md z-10">
+<div class="flex flex-col gap-xs items-center md:items-start">
+<span class="text-headline-sm font-headline-sm text-on-primary">VIPAX</span>
+<p class="font-body-md text-body-md text-on-primary-container opacity-80">© 2024 VIPAX Logistics. EU 261/2004 Compliant Operations.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:opacity-100 underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:opacity-100 underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:opacity-100 underline transition-all" href="#">Regulatory Info</a>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:opacity-100 underline transition-all" href="#">SLA Agreements</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Floating Action Button (Suppressed as per rules for detailed service views, but keeping logic for future screens) -->
+<script>
+        // Simple JS for interactive rows and button clicks
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', () => {
+                // Highlight row
+                document.querySelectorAll('tbody tr').forEach(r => r.classList.remove('bg-surface-container'));
+                row.classList.add('bg-surface-container');
+            });
+        });
+
+        // Search highlight interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('border-primary');
+            searchInput.parentElement.classList.remove('border-outline-variant');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('border-primary');
+            searchInput.parentElement.classList.add('border-outline-variant');
+        });
+    </script>
+</body></html>
