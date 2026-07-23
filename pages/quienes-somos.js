@@ -2,51 +2,53 @@ import Head from 'next/head'
 import Layout from '../src/components/Layout'
 import ScrollReveal from '../src/components/ScrollReveal'
 import Link from 'next/link'
+import { useLanguage } from '../src/context/LanguageContext'
 import { CheckCircleIcon, ShieldIcon, UsersIcon, GlobeIcon } from '../src/components/ServiceIcons'
 import styles from './quienes-somos.module.css'
 
-const values = [
-  {
-    icon: ShieldIcon,
-    title: 'Experiencia',
-    desc: 'Amplia experiencia en el sector aéreo y hotelero, especialistas en IROPS.',
-  },
-  {
-    icon: UsersIcon,
-    title: 'Cercanía',
-    desc: 'Relación cercana con las aerolíneas y conocimiento del sector.',
-  },
-  {
-    icon: GlobeIcon,
-    title: 'Red de proveedores',
-    desc: 'Trabajo con los mejores proveedores para gestionar incidencias de manera rápida y efectiva.',
-  },
-  {
-    icon: CheckCircleIcon,
-    title: 'Soluciones ágiles',
-    desc: 'Garantizamos soluciones eficientes en alojamiento y transporte, la mejor alternativa para cada situación.',
-  },
-]
-
 export default function QuienesSomos() {
+  const { t } = useLanguage()
+
+  const values = [
+    {
+      icon: ShieldIcon,
+      title: t('about.values.experience.title'),
+      desc: t('about.values.experience.desc'),
+    },
+    {
+      icon: UsersIcon,
+      title: t('about.values.closeness.title'),
+      desc: t('about.values.closeness.desc'),
+    },
+    {
+      icon: GlobeIcon,
+      title: t('about.values.network.title'),
+      desc: t('about.values.network.desc'),
+    },
+    {
+      icon: CheckCircleIcon,
+      title: t('about.values.solutions.title'),
+      desc: t('about.values.solutions.desc'),
+    },
+  ]
+
   return (
     <Layout fullWidth>
       <Head>
-        <title>Quiénes somos - VIPAX</title>
-        <meta name="description" content="Conoce a VIPAX. Equipo con amplia experiencia en el sector aéreo y hotelero, especialistas en IROPS." />
+        <title>{t('seo.about.title')}</title>
+        <meta name="description" content={t('seo.about.description')} />
       </Head>
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroContainer}>
             <ScrollReveal>
-              <span className={styles.tag}>Quiénes somos</span>
+              <span className={styles.tag}>{t('about.tag')}</span>
               <h1 className={styles.title}>
-                Bienvenido a{' '}
-                <span className={styles.highlight}>VIPAX</span>
+                {t('about.titleBefore')}{' '}
+                <span className={styles.highlight}>{t('about.titleHighlight')}</span>
               </h1>
               <p className={styles.subtitle}>
-                Expertos en asistencia aeroportuaria. Trabajamos para ofrecer un servicio
-                de excelencia en la gestión de pasajeros y tripulaciones en aeropuertos.
+                {t('about.subtitle')}
               </p>
             </ScrollReveal>
           </div>
@@ -57,17 +59,13 @@ export default function QuienesSomos() {
             <div className={styles.aboutContent}>
               <ScrollReveal>
                 <h2 className={styles.aboutTitle}>
-                  ¿Quiénes somos en VIPAX?
+                  {t('about.aboutTitle')}
                 </h2>
                 <p className={styles.aboutText}>
-                  Somos un equipo con <strong>amplia experiencia</strong> en el sector aéreo y
-                  hotelero y especialistas en IROPS. Nuestra relación cercana con las aerolíneas
-                  y el conocimiento y trabajo con los mejores proveedores nos permite gestionar
-                  incidencias de manera rápida y efectiva.
+                  {t('about.aboutText1')}
                 </p>
                 <p className={styles.aboutText}>
-                  Garantizamos <strong>soluciones ágiles</strong> y eficientes en alojamiento
-                  y transporte, asegurando siempre la mejor alternativa para cada situación.
+                  {t('about.aboutText2')}
                 </p>
               </ScrollReveal>
             </div>
@@ -83,13 +81,12 @@ export default function QuienesSomos() {
           <div className={styles.valuesContainer}>
             <ScrollReveal>
               <div className={styles.valuesHeader}>
-                <span className={styles.tag}>Nuestros valores</span>
+                <span className={styles.tag}>{t('about.valuesTag')}</span>
                 <h2 className={styles.valuesTitle}>
-                  ¿Listo para optimizar tu experiencia de cliente?
+                  {t('about.valuesTitle')}
                 </h2>
                 <p className={styles.valuesSubtitle}>
-                  Descubre cómo nuestros servicios pueden hacer la diferencia en caso de una contingencia.
-                  En VIPAX, estamos preparados para atender cada detalle.
+                  {t('about.valuesSubtitle')}
                 </p>
               </div>
             </ScrollReveal>
@@ -116,10 +113,10 @@ export default function QuienesSomos() {
         <section className={styles.cta}>
           <div className={styles.ctaContainer}>
             <ScrollReveal>
-              <h2 className={styles.ctaTitle}>¿Necesitas nuestros servicios?</h2>
-              <p className={styles.ctaDesc}>Contacta con nosotros y descubre cómo podemos ayudarte.</p>
+              <h2 className={styles.ctaTitle}>{t('about.ctaTitle')}</h2>
+              <p className={styles.ctaDesc}>{t('about.ctaDesc')}</p>
               <Link href="/contact" className={styles.ctaBtn}>
-                Contáctanos
+                {t('about.ctaBtn')}
               </Link>
             </ScrollReveal>
           </div>

@@ -7,15 +7,18 @@ import HowItWorks from '../src/components/HowItWorks'
 import Testimonials from '../src/components/Testimonials'
 import Trust from '../src/components/Trust'
 import CTA from '../src/components/CTA'
+import { useLanguage } from '../src/context/LanguageContext'
 
 export default function Home() {
+  const { t } = useLanguage()
+
   return (
     <Layout fullWidth>
       <Head>
-        <title>VIPAX - Gestión de Incidencias Aéreas</title>
-        <meta name="description" content="Soluciones integrales de gestión de incidencias aéreas, reservas hoteleras y transporte para aerolíneas y pasajeros. Disponible 24/7." />
-        <meta property="og:title" content="VIPAX - Gestión de Incidencias Aéreas" />
-        <meta property="og:description" content="Coordinación rápida de alojamiento, transporte y asistencia para pasajeros y aerolíneas." />
+        <title>{t('seo.home.title')}</title>
+        <meta name="description" content={t('seo.home.description')} />
+        <meta property="og:title" content={t('seo.home.title')} />
+        <meta property="og:description" content={t('seo.home.ogDescription')} />
         <meta property="og:type" content="website" />
       </Head>
       <main>

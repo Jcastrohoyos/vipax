@@ -2,34 +2,37 @@ import Head from 'next/head'
 import Layout from '../src/components/Layout'
 import ScrollReveal from '../src/components/ScrollReveal'
 import ContactForm from '../src/components/ContactForm'
+import { useLanguage } from '../src/context/LanguageContext'
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon } from '../src/components/ServiceIcons'
 import styles from './contact.module.css'
 
-const contactInfo = [
-  { icon: PhoneIcon, label: 'Teléfono', value: '+34 647 105 183', href: 'tel:+34647105183' },
-  { icon: MailIcon, label: 'Email', value: 'cbeltran@vipax.es', href: 'mailto:cbeltran@vipax.es' },
-  { icon: MapPinIcon, label: 'Ubicación', value: 'Aeropuerto Adolfo Suárez Madrid-Barajas', href: null },
-  { icon: ClockIcon, label: 'Disponibilidad', value: '24/7', href: null },
-]
-
 export default function Contact() {
+  const { t } = useLanguage()
+
+  const contactInfo = [
+    { icon: PhoneIcon, label: t('contact.info.phone.label'), value: '+34 647 105 183', href: 'tel:+34647105183' },
+    { icon: MailIcon, label: t('contact.info.email.label'), value: 'cbeltran@vipax.es', href: 'mailto:cbeltran@vipax.es' },
+    { icon: MapPinIcon, label: t('contact.info.location.label'), value: t('contact.info.location.value'), href: null },
+    { icon: ClockIcon, label: t('contact.info.availability.label'), value: '24/7', href: null },
+  ]
+
   return (
     <Layout fullWidth>
       <Head>
-        <title>Contacto - VIPAX</title>
-        <meta name="description" content="Contacta con VIPAX para asistencia aérea inmediata. Aeropuerto Adolfo Suárez Madrid-Barajas. Disponible 24/7." />
+        <title>{t('seo.contact.title')}</title>
+        <meta name="description" content={t('seo.contact.description')} />
       </Head>
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroContainer}>
             <ScrollReveal>
-              <span className={styles.tag}>Contacto</span>
+              <span className={styles.tag}>{t('contact.tag')}</span>
               <h1 className={styles.title}>
-                Póngase en{' '}
-                <span className={styles.highlight}>contacto</span> con nosotros
+                {t('contact.titleBefore')}{' '}
+                <span className={styles.highlight}>{t('contact.titleHighlight')}</span> {t('contact.titleAfter')}
               </h1>
               <p className={styles.subtitle}>
-                Nuestro equipo está disponible 24/7 para resolver cualquier incidencia.
+                {t('contact.subtitle')}
               </p>
             </ScrollReveal>
           </div>
@@ -39,9 +42,9 @@ export default function Contact() {
           <div className={styles.contentContainer}>
             <div className={styles.info}>
               <ScrollReveal>
-                <h2 className={styles.infoTitle}>Ponte en contacto</h2>
+                <h2 className={styles.infoTitle}>{t('contact.infoTitle')}</h2>
                 <p className={styles.infoDesc}>
-                  Estamos aquí para ayudarte. Contacta con nosotros por cualquiera de estos medios.
+                  {t('contact.infoDesc')}
                 </p>
               </ScrollReveal>
 
@@ -68,7 +71,7 @@ export default function Contact() {
 
               <ScrollReveal delay={0.4}>
                 <div className={styles.social}>
-                  <p className={styles.socialTitle}>Síguenos</p>
+                  <p className={styles.socialTitle}>{t('contact.followUs')}</p>
                   <div className={styles.socialLinks}>
                     <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Facebook">
                       <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -90,7 +93,7 @@ export default function Contact() {
             <div className={styles.formWrapper}>
               <ScrollReveal direction="right">
                 <div className={styles.formCard}>
-                  <h3 className={styles.formTitle}>Envíanos un mensaje</h3>
+                  <h3 className={styles.formTitle}>{t('contact.formTitle')}</h3>
                   <ContactForm />
                 </div>
               </ScrollReveal>

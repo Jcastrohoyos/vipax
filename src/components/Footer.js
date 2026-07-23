@@ -1,23 +1,26 @@
 import Link from 'next/link'
 import ScrollReveal from './ScrollReveal'
+import { useLanguage } from '../context/LanguageContext'
 import { PhoneIcon, MailIcon, MapPinIcon } from './ServiceIcons'
 import styles from './Footer.module.css'
 
-const serviceLinks = [
-  { href: '/services', label: 'Gestión de pasajeros' },
-  { href: '/services', label: 'Reservas hoteleras' },
-  { href: '/services', label: 'Transporte terrestre' },
-  { href: '/services', label: 'Eventos corporativos' },
-]
-
-const companyLinks = [
-  { href: '/', label: 'Inicio' },
-  { href: '/quienes-somos', label: 'Quiénes somos' },
-  { href: '/services', label: 'Servicios' },
-  { href: '/contact', label: 'Contacto' },
-]
-
 export default function Footer() {
+  const { t } = useLanguage()
+
+  const serviceLinks = [
+    { href: '/services', label: t('footer.services.passengerManagement') },
+    { href: '/services', label: t('footer.services.hotelReservations') },
+    { href: '/services', label: t('footer.services.groundTransport') },
+    { href: '/services', label: t('footer.services.corporateEvents') },
+  ]
+
+  const companyLinks = [
+    { href: '/', label: t('footer.company.home') },
+    { href: '/quienes-somos', label: t('footer.company.about') },
+    { href: '/services', label: t('footer.company.services') },
+    { href: '/contact', label: t('footer.company.contact') },
+  ]
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -28,8 +31,7 @@ export default function Footer() {
                 <img src="/vipax-logo.png" alt="VIPAX" />
               </Link>
               <p className={styles.brandDesc}>
-                Soluciones integrales de gestión de incidencias aéreas y logística corporativa.
-                Cumplimiento del Reglamento Europeo 261/2004.
+                {t('footer.brandDesc')}
               </p>
               <div className={styles.contact}>
                 <div className={styles.contactItem}>
@@ -42,13 +44,13 @@ export default function Footer() {
                 </div>
                 <div className={styles.contactItem}>
                   <MapPinIcon className={styles.contactIcon} />
-                  <span>Aeropuerto Adolfo Suárez Madrid-Barajas</span>
+                  <span>{t('footer.location')}</span>
                 </div>
               </div>
             </div>
 
             <div className={styles.column}>
-              <h4 className={styles.columnTitle}>Servicios</h4>
+              <h4 className={styles.columnTitle}>{t('footer.servicesTitle')}</h4>
               <ul className={styles.links}>
                 {serviceLinks.map((link) => (
                   <li key={link.label}>
@@ -59,7 +61,7 @@ export default function Footer() {
             </div>
 
             <div className={styles.column}>
-              <h4 className={styles.columnTitle}>Empresa</h4>
+              <h4 className={styles.columnTitle}>{t('footer.companyTitle')}</h4>
               <ul className={styles.links}>
                 {companyLinks.map((link) => (
                   <li key={link.label}>
@@ -70,7 +72,7 @@ export default function Footer() {
             </div>
 
             <div className={styles.column}>
-              <h4 className={styles.columnTitle}>Contacto</h4>
+              <h4 className={styles.columnTitle}>{t('footer.contactTitle')}</h4>
               <ul className={styles.links}>
                 <li>
                   <a href="tel:+34647105183" className={styles.link}>+34 647 105 183</a>
@@ -78,8 +80,8 @@ export default function Footer() {
                 <li>
                   <a href="mailto:cbeltran@vipax.es" className={styles.link}>cbeltran@vipax.es</a>
                 </li>
-                <li className={styles.link}>Aeropuerto Madrid-Barajas</li>
-                <li className={styles.link}>Disponible 24/7</li>
+                <li className={styles.link}>{t('footer.airport')}</li>
+                <li className={styles.link}>{t('footer.available247')}</li>
               </ul>
               <div className={styles.social}>
                 <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Facebook">
@@ -110,18 +112,18 @@ export default function Footer() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Ubicación VIPAX - Aeropuerto Madrid-Barajas"
+              title={t('footer.mapTitle')}
             />
           </div>
         </div>
 
         <div className={styles.bottom}>
           <p className={styles.copyright}>
-            &copy; {new Date().getFullYear()} VIPAX. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} VIPAX. {t('footer.copyright')}
           </p>
           <div className={styles.legal}>
-            <a href="#" className={styles.legalLink}>Aviso legal</a>
-            <a href="#" className={styles.legalLink}>Política de privacidad</a>
+            <a href="#" className={styles.legalLink}>{t('footer.legalNotice')}</a>
+            <a href="#" className={styles.legalLink}>{t('footer.privacyPolicy')}</a>
           </div>
         </div>
       </div>

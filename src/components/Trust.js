@@ -1,26 +1,28 @@
 import ScrollReveal from './ScrollReveal'
+import { useLanguage } from '../context/LanguageContext'
 import styles from './Trust.module.css'
 
-const logos = [
-  { name: 'Air Europa', abbr: 'AE' },
-  { name: 'Iberia', abbr: 'IB' },
-  { name: 'Vueling', abbr: 'VL' },
-  { name: 'Ryanair', abbr: 'RY' },
-  { name: 'Lufthansa', abbr: 'LH' },
-  { name: 'British Airways', abbr: 'BA' },
-]
-
 export default function Trust() {
+  const { t } = useLanguage()
+
+  const logos = [
+    { name: 'Air Europa', abbr: 'AE' },
+    { name: 'Iberia', abbr: 'IB' },
+    { name: 'Vueling', abbr: 'VL' },
+    { name: 'Ryanair', abbr: 'RY' },
+    { name: 'Lufthansa', abbr: 'LH' },
+    { name: 'British Airways', abbr: 'BA' },
+  ]
+
   return (
     <section className={styles.trust}>
       <div className={styles.container}>
         <ScrollReveal>
           <div className={styles.header}>
-            <span className={styles.tag}>Confianza</span>
+            <span className={styles.tag}>{t('trust.tag')}</span>
             <h2 className={styles.title}>
-              Nuestra relación cercana con las{' '}
-              <span className={styles.highlight}>aerolíneas</span> nos permite gestionar
-              incidencias de manera rápida y efectiva
+              {t('trust.titleBefore')}{' '}
+              <span className={styles.highlight}>{t('trust.titleHighlight')}</span> {t('trust.titleAfter')}
             </h2>
           </div>
         </ScrollReveal>
@@ -45,8 +47,8 @@ export default function Trust() {
               </svg>
             </div>
             <div>
-              <div className={styles.badgeTitle}>Reglamento Europeo 261/2004</div>
-              <div className={styles.badgeDesc}>Cumplimiento garantizado en toda asistencia</div>
+              <div className={styles.badgeTitle}>{t('trust.badgeTitle')}</div>
+              <div className={styles.badgeDesc}>{t('trust.badgeDesc')}</div>
             </div>
           </div>
         </ScrollReveal>
