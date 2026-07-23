@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useLanguage } from '../context/LanguageContext'
 import styles from './Hero.module.css'
 
 export default function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section className={styles.hero}>
       <div className={styles.bgPattern} aria-hidden="true" />
@@ -15,7 +18,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
           >
             <span className={styles.badgeDot} />
-            Asistencia Aérea 24/7
+            {t('hero.badge')}
           </motion.div>
 
           <motion.h1
@@ -24,9 +27,9 @@ export default function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            Gestión de Incidencias{' '}
-            <span className={styles.gradient}>Aéreas</span>{' '}
-            y Logística Corporativa
+            {t('hero.titleBefore')}{' '}
+            <span className={styles.gradient}>{t('hero.titleHighlight')}</span>{' '}
+            {t('hero.titleAfter')}
           </motion.h1>
 
           <motion.p
@@ -35,11 +38,7 @@ export default function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            En VIPAX, gestionamos de forma <strong>ágil y eficiente</strong> cualquier asistencia
-            a pasajeros antes, durante y después de la operación. Nos encargamos del transporte,
-            alojamiento y restauración, ofreciendo una solución integral y eficaz que
-            <strong> garantiza bienestar</strong> y minimiza el impacto operativo para la
-            aerolínea cumpliendo con el <strong>Reglamento Europeo 261/2004</strong>.
+            {t('hero.subtitle')}
           </motion.p>
 
           <motion.div
@@ -49,14 +48,14 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.45 }}
           >
             <Link href="/contact" className={styles.primaryBtn}>
-              Conoce nuestros servicios
+              {t('hero.ctaPrimary')}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
             </Link>
             <Link href="/quienes-somos" className={styles.secondaryBtn}>
-              Quiénes somos
+              {t('hero.ctaSecondary')}
             </Link>
           </motion.div>
 
@@ -72,7 +71,7 @@ export default function Hero() {
               <div className={styles.avatar} style={{ background: 'linear-gradient(135deg, #c9a84c, #e0c774)' }}>C</div>
             </div>
             <span className={styles.trustText}>
-              <strong>+200</strong> aerolíneas confían en nosotros
+              <strong>+200</strong> {t('hero.trustText')}
             </span>
           </motion.div>
         </div>
@@ -93,8 +92,8 @@ export default function Hero() {
               </svg>
             </div>
             <div>
-              <div className={styles.floatingTitle}>Resolución inmediata</div>
-              <div className={styles.floatingDesc}>Cumplimiento Reglamento UE 261/2004</div>
+              <div className={styles.floatingTitle}>{t('hero.floatingTitle')}</div>
+              <div className={styles.floatingDesc}>{t('hero.floatingDesc')}</div>
             </div>
           </div>
         </motion.div>

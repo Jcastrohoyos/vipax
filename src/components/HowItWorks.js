@@ -1,38 +1,41 @@
 import ScrollReveal from './ScrollReveal'
+import { useLanguage } from '../context/LanguageContext'
 import { PhoneIcon, ClipboardListIcon, CheckCircleIcon } from './ServiceIcons'
 import styles from './HowItWorks.module.css'
 
-const steps = [
-  {
-    num: '01',
-    icon: PhoneIcon,
-    title: 'Contactas con nosotros',
-    desc: 'Llámanos o envía un mensaje. Nuestro equipo está disponible 24/7 para atender cualquier incidencia de forma inmediata.',
-  },
-  {
-    num: '02',
-    icon: ClipboardListIcon,
-    title: 'Gestionamos la solución',
-    desc: 'Coordinamos alojamiento, transporte y asistencia de forma inmediata. Nos encargamos de todo con amplia red de proveedores certificados.',
-  },
-  {
-    num: '03',
-    icon: CheckCircleIcon,
-    title: 'Resolución garantizada',
-    desc: 'El pasajero recibe atención integral. Garantizamos soluciones ágiles y la mejor alternativa para cada situación.',
-  },
-]
-
 export default function HowItWorks() {
+  const { t } = useLanguage()
+
+  const steps = [
+    {
+      num: '01',
+      icon: PhoneIcon,
+      title: t('howItWorks.step1.title'),
+      desc: t('howItWorks.step1.desc'),
+    },
+    {
+      num: '02',
+      icon: ClipboardListIcon,
+      title: t('howItWorks.step2.title'),
+      desc: t('howItWorks.step2.desc'),
+    },
+    {
+      num: '03',
+      icon: CheckCircleIcon,
+      title: t('howItWorks.step3.title'),
+      desc: t('howItWorks.step3.desc'),
+    },
+  ]
+
   return (
     <section className={styles.howItWorks}>
       <div className={styles.container}>
         <ScrollReveal>
           <div className={styles.header}>
-            <span className={styles.tag}>Cómo funciona</span>
+            <span className={styles.tag}>{t('howItWorks.tag')}</span>
             <h2 className={styles.title}>
-              Tres pasos hacia la{' '}
-              <span className={styles.highlight}>resolución</span>
+              {t('howItWorks.titleBefore')}{' '}
+              <span className={styles.highlight}>{t('howItWorks.titleHighlight')}</span>
             </h2>
           </div>
         </ScrollReveal>

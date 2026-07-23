@@ -1,15 +1,18 @@
 import ScrollReveal from './ScrollReveal'
 import AnimatedCounter from './AnimatedCounter'
+import { useLanguage } from '../context/LanguageContext'
 import styles from './Stats.module.css'
 
-const stats = [
-  { value: 15, suffix: '+', label: 'Años de experiencia' },
-  { value: 50000, suffix: '+', label: 'Pasajeros asistidos' },
-  { value: 200, suffix: '+', label: 'Aerolíneas asociadas' },
-  { value: 98, suffix: '%', label: 'Satisfacción del cliente' },
-]
-
 export default function Stats() {
+  const { t } = useLanguage()
+
+  const stats = [
+    { value: 15, suffix: '+', label: t('stats.experience') },
+    { value: 50000, suffix: '+', label: t('stats.passengers') },
+    { value: 200, suffix: '+', label: t('stats.airlines') },
+    { value: 98, suffix: '%', label: t('stats.satisfaction') },
+  ]
+
   return (
     <section className={styles.stats}>
       <div className={styles.container}>

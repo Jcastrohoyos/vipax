@@ -2,88 +2,90 @@ import Head from 'next/head'
 import Layout from '../src/components/Layout'
 import ScrollReveal from '../src/components/ScrollReveal'
 import Link from 'next/link'
+import { useLanguage } from '../src/context/LanguageContext'
 import { PlaneIcon, HotelIcon, BusIcon, CalendarIcon, CheckCircleIcon, ArrowRightIcon } from '../src/components/ServiceIcons'
 import styles from './services.module.css'
 
-const services = [
-  {
-    icon: PlaneIcon,
-    title: 'Gestión integral de pasajeros',
-    desc: 'Nos especializamos en la atención de pasajeros afectados por cualquier tipo de incidencia operativa. Actuamos de forma inmediata para coordinar alojamiento, transporte y asistencia, garantizando una solución rápida y eficiente.',
-    features: [
-      'Overbooking',
-      'Cancelaciones de vuelos',
-      'Pérdidas de conexión',
-      'Desvíos de vuelo',
-      'Coordinación alojamiento y transporte',
-      'Protección de imagen de la aerolínea',
-    ],
-    color: '#0b5cff',
-  },
-  {
-    icon: HotelIcon,
-    title: 'Reservas hoteleras',
-    desc: 'Servicio completo de gestión de reservas hoteleras para pasajeros de vuelos afectados, tripulaciones, empleados de líneas aéreas y grupos organizados. Colaboramos con una amplia red de hoteles en distintos puntos de la ciudad.',
-    features: [
-      'Amplia red de hoteles partner',
-      'Pasajeros de vuelos afectados',
-      'Tripulaciones y empleados',
-      'Grupos organizados',
-      'Rapidez y eficiencia',
-      'Atención personalizada',
-    ],
-    color: '#c9a84c',
-  },
-  {
-    icon: BusIcon,
-    title: 'Transporte terrestre',
-    desc: 'Soluciones de transporte terrestre eficientes adaptadas a cada situación, desde cancelaciones de vuelos hasta eventos corporativos. Trabajamos con una amplia red de proveedores certificados.',
-    features: [
-      'Traslados individuales',
-      'Grupos de pasajeros',
-      'Tripulaciones aéreas',
-      'Proveedores certificados',
-      'Servicio seguro y puntual',
-      'Cobertura nacional e internacional',
-    ],
-    color: '#10b981',
-  },
-  {
-    icon: CalendarIcon,
-    title: 'Eventos corporativos',
-    desc: 'Transformamos ideas en experiencias memorables. Organización integral de reuniones, congresos, convenciones, viajes de incentivo y team buildings.',
-    features: [
-      'Reuniones, congresos y convenciones',
-      'Viajes de incentivo',
-      'Team buildings y actividades motivacionales',
-      'Gestión de espacios y catering',
-      'Tecnología y ambientación',
-      'Coordinación y supervisión in situ',
-    ],
-    color: '#8b5cf6',
-  },
-]
-
 export default function ServicesPage() {
+  const { t } = useLanguage()
+
+  const services = [
+    {
+      icon: PlaneIcon,
+      title: t('servicesDetail.passengerManagement.title'),
+      desc: t('servicesDetail.passengerManagement.desc'),
+      features: [
+        t('servicesDetail.passengerManagement.f1'),
+        t('servicesDetail.passengerManagement.f2'),
+        t('servicesDetail.passengerManagement.f3'),
+        t('servicesDetail.passengerManagement.f4'),
+        t('servicesDetail.passengerManagement.f5'),
+        t('servicesDetail.passengerManagement.f6'),
+      ],
+      color: '#0b5cff',
+    },
+    {
+      icon: HotelIcon,
+      title: t('servicesDetail.hotelReservations.title'),
+      desc: t('servicesDetail.hotelReservations.desc'),
+      features: [
+        t('servicesDetail.hotelReservations.f1'),
+        t('servicesDetail.hotelReservations.f2'),
+        t('servicesDetail.hotelReservations.f3'),
+        t('servicesDetail.hotelReservations.f4'),
+        t('servicesDetail.hotelReservations.f5'),
+        t('servicesDetail.hotelReservations.f6'),
+      ],
+      color: '#c9a84c',
+    },
+    {
+      icon: BusIcon,
+      title: t('servicesDetail.groundTransport.title'),
+      desc: t('servicesDetail.groundTransport.desc'),
+      features: [
+        t('servicesDetail.groundTransport.f1'),
+        t('servicesDetail.groundTransport.f2'),
+        t('servicesDetail.groundTransport.f3'),
+        t('servicesDetail.groundTransport.f4'),
+        t('servicesDetail.groundTransport.f5'),
+        t('servicesDetail.groundTransport.f6'),
+      ],
+      color: '#10b981',
+    },
+    {
+      icon: CalendarIcon,
+      title: t('servicesDetail.corporateEvents.title'),
+      desc: t('servicesDetail.corporateEvents.desc'),
+      features: [
+        t('servicesDetail.corporateEvents.f1'),
+        t('servicesDetail.corporateEvents.f2'),
+        t('servicesDetail.corporateEvents.f3'),
+        t('servicesDetail.corporateEvents.f4'),
+        t('servicesDetail.corporateEvents.f5'),
+        t('servicesDetail.corporateEvents.f6'),
+      ],
+      color: '#8b5cf6',
+    },
+  ]
+
   return (
     <Layout fullWidth>
       <Head>
-        <title>Servicios - VIPAX</title>
-        <meta name="description" content="Descubre nuestros servicios de gestión de incidencias aéreas: pasajeros, reservas hoteleras, transporte terrestre y eventos corporativos." />
+        <title>{t('seo.services.title')}</title>
+        <meta name="description" content={t('seo.services.description')} />
       </Head>
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroContainer}>
             <ScrollReveal>
-              <span className={styles.tag}>Nuestros servicios</span>
+              <span className={styles.tag}>{t('servicesDetail.tag')}</span>
               <h1 className={styles.title}>
-                Soluciones{' '}
-                <span className={styles.highlight}>integrales</span>{' '}
-                para la industria aérea
+                {t('servicesDetail.titleBefore')}{' '}
+                <span className={styles.highlight}>{t('servicesDetail.titleHighlight')}</span>{' '}
+                {t('servicesDetail.titleAfter')}
               </h1>
               <p className={styles.subtitle}>
-                En VIPAX gestionamos de forma ágil y eficiente cualquier asistencia a pasajeros,
-                ofreciendo una solución integral que garantiza bienestar y minimiza el impacto operativo.
+                {t('servicesDetail.subtitle')}
               </p>
             </ScrollReveal>
           </div>
@@ -126,10 +128,10 @@ export default function ServicesPage() {
         <section className={styles.cta}>
           <div className={styles.ctaContainer}>
             <ScrollReveal>
-              <h2 className={styles.ctaTitle}>¿Necesitas asistencia inmediata?</h2>
-              <p className={styles.ctaDesc}>Contacta con nuestro equipo y recibe solución en minutos. Disponible 24/7.</p>
+              <h2 className={styles.ctaTitle}>{t('servicesDetail.ctaTitle')}</h2>
+              <p className={styles.ctaDesc}>{t('servicesDetail.ctaDesc')}</p>
               <Link href="/contact" className={styles.ctaBtn}>
-                Contactar ahora
+                {t('servicesDetail.ctaBtn')}
                 <ArrowRightIcon className={styles.ctaBtnIcon} />
               </Link>
             </ScrollReveal>

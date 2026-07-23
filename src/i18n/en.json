@@ -1,0 +1,350 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "services": "Services",
+    "calculator": "Calculator",
+    "contact": "Contact",
+    "contactCta": "Contact"
+  },
+  "theme": {
+    "dark": "Dark mode",
+    "light": "Light mode",
+    "toggleDark": "Switch to dark mode",
+    "toggleLight": "Switch to light mode"
+  },
+  "hero": {
+    "badge": "Air Assistance 24/7",
+    "titleBefore": "Air Incident",
+    "titleHighlight": "Management",
+    "titleAfter": "and Corporate Logistics",
+    "subtitle": "At VIPAX, we efficiently manage any passenger assistance before, during and after the operation. We handle transportation, accommodation and catering, providing a comprehensive and effective solution that guarantees well-being and minimizes operational impact for the airline in compliance with European Regulation 261/2004.",
+    "ctaPrimary": "Discover our services",
+    "ctaSecondary": "About us",
+    "trustText": "airlines trust us",
+    "floatingTitle": "Immediate resolution",
+    "floatingDesc": "EU Regulation 261/2004 compliance",
+    "imageAlt": "VIPAX air assistance"
+  },
+  "stats": {
+    "experience": "Years of experience",
+    "passengers": "Passengers assisted",
+    "airlines": "Partner airlines",
+    "satisfaction": "Customer satisfaction"
+  },
+  "services": {
+    "tag": "Our services",
+    "titleBefore": "Comprehensive solutions for the",
+    "titleHighlight": "aviation industry",
+    "subtitle": "At VIPAX we efficiently manage any passenger assistance, providing a comprehensive solution that guarantees well-being and minimizes operational impact.",
+    "cta": "Discover our services",
+    "passengerManagement": {
+      "title": "Comprehensive passenger management",
+      "desc": "We specialize in assisting passengers affected by any type of operational incident: overbooking, flight cancellations, missed connections and flight diversions."
+    },
+    "hotelReservations": {
+      "title": "Hotel reservations",
+      "desc": "Complete hotel reservation management service for affected flight passengers, crew members, airline employees and organized groups."
+    },
+    "groundTransport": {
+      "title": "Ground transportation",
+      "desc": "Efficient ground transportation solutions adapted to each situation, from flight cancellations to corporate events with a wide network of certified providers."
+    },
+    "corporateEvents": {
+      "title": "Corporate events",
+      "desc": "Organization of meetings, conferences, conventions, incentive trips and team buildings. Venue management, catering, technology and on-site coordination."
+    }
+  },
+  "howItWorks": {
+    "tag": "How it works",
+    "titleBefore": "Three steps to",
+    "titleHighlight": "resolution",
+    "step1": {
+      "title": "Contact us",
+      "desc": "Call us or send a message. Our team is available 24/7 to handle any incident immediately."
+    },
+    "step2": {
+      "title": "We manage the solution",
+      "desc": "We coordinate accommodation, transportation and assistance immediately. We handle everything with a wide network of certified providers."
+    },
+    "step3": {
+      "title": "Guaranteed resolution",
+      "desc": "The passenger receives comprehensive care. We guarantee quick solutions and the best alternative for each situation."
+    }
+  },
+  "testimonials": {
+    "tag": "Testimonials",
+    "titleBefore": "What our",
+    "titleHighlight": "clients",
+    "titleAfter": "say",
+    "testimonial": "Testimonial",
+    "prev": "Previous",
+    "next": "Next",
+    "testimonial1": {
+      "text": "VIPAX transformed our incident management. They resolved a mass cancellation of 200 passengers in less than 4 hours. Their professionalism is exceptional.",
+      "author": "María García",
+      "role": "Director of Operations",
+      "company": "Air Europa"
+    },
+    "testimonial2": {
+      "text": "The hotel and transportation coordination is impeccable. We have been working with them for 3 years and our passenger satisfaction has improved significantly.",
+      "author": "Carlos Ruiz",
+      "role": "Customer Service Manager",
+      "company": "Iberia Express"
+    },
+    "testimonial3": {
+      "text": "When we had an emergency with 150 stranded crew members, VIPAX found solutions in minutes. Their hotel and transportation network is impressive.",
+      "author": "Ana Martínez",
+      "role": "Shift Supervisor",
+      "company": "Vueling"
+    }
+  },
+  "trust": {
+    "tag": "Trust",
+    "titleBefore": "Our close relationship with",
+    "titleHighlight": "airlines",
+    "titleAfter": "allows us to manage incidents quickly and effectively",
+    "badgeTitle": "European Regulation 261/2004",
+    "badgeDesc": "Compliance guaranteed in every assistance"
+  },
+  "cta": {
+    "titleBefore": "Need immediate",
+    "titleHighlight": "assistance",
+    "titleAfter": "?",
+    "subtitle": "At VIPAX we are prepared to handle every detail. Contact our team and receive a solution in minutes. Available 24/7.",
+    "ctaPrimary": "Discover our services"
+  },
+  "footer": {
+    "brandDesc": "Comprehensive air incident management and corporate logistics solutions. Compliance with European Regulation 261/2004.",
+    "location": "Adolfo Suárez Madrid-Barajas Airport",
+    "servicesTitle": "Services",
+    "companyTitle": "Company",
+    "contactTitle": "Contact",
+    "airport": "Madrid-Barajas Airport",
+    "available247": "Available 24/7",
+    "copyright": "All rights reserved.",
+    "legalNotice": "Legal notice",
+    "privacyPolicy": "Privacy policy",
+    "mapTitle": "VIPAX Location - Madrid-Barajas Airport",
+    "services": {
+      "passengerManagement": "Passenger management",
+      "hotelReservations": "Hotel reservations",
+      "groundTransport": "Ground transportation",
+      "corporateEvents": "Corporate events"
+    },
+    "company": {
+      "home": "Home",
+      "about": "About us",
+      "services": "Services",
+      "contact": "Contact"
+    }
+  },
+  "contact": {
+    "tag": "Contact",
+    "titleBefore": "Get in",
+    "titleHighlight": "touch",
+    "titleAfter": "with us",
+    "subtitle": "Our team is available 24/7 to resolve any incident.",
+    "infoTitle": "Get in touch",
+    "infoDesc": "We are here to help you. Contact us through any of these channels.",
+    "followUs": "Follow us",
+    "formTitle": "Send us a message",
+    "info": {
+      "phone": {
+        "label": "Phone"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "location": {
+        "label": "Location",
+        "value": "Adolfo Suárez Madrid-Barajas Airport"
+      },
+      "availability": {
+        "label": "Availability"
+      }
+    },
+    "form": {
+      "name": "Full name",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Send message",
+      "success": "Message sent successfully. We will respond soon.",
+      "error": "Error sending. Please try again."
+    }
+  },
+  "about": {
+    "tag": "About us",
+    "titleBefore": "Welcome to",
+    "titleHighlight": "VIPAX",
+    "subtitle": "Experts in airport assistance. We work to provide excellence in passenger and crew management at airports.",
+    "aboutTitle": "Who are we at VIPAX?",
+    "aboutText1": "We are a team with extensive experience in the aviation and hotel industry, specializing in IROPS. Our close relationship with airlines and knowledge of working with the best providers allows us to handle incidents quickly and effectively.",
+    "aboutText2": "We guarantee quick and efficient solutions in accommodation and transportation, always ensuring the best alternative for each situation.",
+    "valuesTag": "Our values",
+    "valuesTitle": "Ready to optimize your customer experience?",
+    "valuesSubtitle": "Discover how our services can make the difference in case of a contingency. At VIPAX, we are prepared to handle every detail.",
+    "ctaTitle": "Need our services?",
+    "ctaDesc": "Contact us and discover how we can help you.",
+    "ctaBtn": "Contact us",
+    "values": {
+      "experience": {
+        "title": "Experience",
+        "desc": "Extensive experience in the aviation and hotel industry, specializing in IROPS."
+      },
+      "closeness": {
+        "title": "Closeness",
+        "desc": "Close relationship with airlines and industry knowledge."
+      },
+      "network": {
+        "title": "Provider network",
+        "desc": "Working with the best providers to handle incidents quickly and effectively."
+      },
+      "solutions": {
+        "title": "Quick solutions",
+        "desc": "We guarantee efficient solutions in accommodation and transportation, the best alternative for each situation."
+      }
+    }
+  },
+  "servicesDetail": {
+    "tag": "Our services",
+    "titleBefore": "Comprehensive",
+    "titleHighlight": "solutions",
+    "titleAfter": "for the aviation industry",
+    "subtitle": "At VIPAX we efficiently manage any passenger assistance, providing a comprehensive solution that guarantees well-being and minimizes operational impact.",
+    "ctaTitle": "Need immediate assistance?",
+    "ctaDesc": "Contact our team and receive a solution in minutes. Available 24/7.",
+    "ctaBtn": "Contact now",
+    "passengerManagement": {
+      "title": "Comprehensive passenger management",
+      "desc": "We specialize in assisting passengers affected by any type of operational incident. We act immediately to coordinate accommodation, transportation and assistance, guaranteeing a quick and efficient solution.",
+      "f1": "Overbooking",
+      "f2": "Flight cancellations",
+      "f3": "Missed connections",
+      "f4": "Flight diversions",
+      "f5": "Accommodation and transport coordination",
+      "f6": "Airline image protection"
+    },
+    "hotelReservations": {
+      "title": "Hotel reservations",
+      "desc": "Complete hotel reservation management service for affected flight passengers, crew members, airline employees and organized groups. We collaborate with a wide network of hotels in various locations.",
+      "f1": "Wide network of partner hotels",
+      "f2": "Affected flight passengers",
+      "f3": "Crew and employees",
+      "f4": "Organized groups",
+      "f5": "Speed and efficiency",
+      "f6": "Personalized attention"
+    },
+    "groundTransport": {
+      "title": "Ground transportation",
+      "desc": "Efficient ground transportation solutions adapted to each situation, from flight cancellations to corporate events. We work with a wide network of certified providers.",
+      "f1": "Individual transfers",
+      "f2": "Passenger groups",
+      "f3": "Air crew",
+      "f4": "Certified providers",
+      "f5": "Safe and punctual service",
+      "f6": "National and international coverage"
+    },
+    "corporateEvents": {
+      "title": "Corporate events",
+      "desc": "We turn ideas into memorable experiences. Comprehensive organization of meetings, conferences, conventions, incentive trips and team buildings.",
+      "f1": "Meetings, conferences and conventions",
+      "f2": "Incentive trips",
+      "f3": "Team buildings and motivational activities",
+      "f4": "Venue and catering management",
+      "f5": "Technology and setup",
+      "f6": "On-site coordination and supervision"
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "Sorry, the page you are looking for does not exist or has been moved.",
+    "backToHome": "Back to home"
+  },
+  "seo": {
+    "home": {
+      "title": "VIPAX - Air Incident Management",
+      "description": "Comprehensive air incident management, hotel reservations and transportation solutions for airlines and passengers. Available 24/7.",
+      "ogDescription": "Quick coordination of accommodation, transportation and assistance for passengers and airlines."
+    },
+    "about": {
+      "title": "About us - VIPAX",
+      "description": "Meet VIPAX. A team with extensive experience in the aviation and hotel industry, specializing in IROPS."
+    },
+    "services": {
+      "title": "Services - VIPAX",
+      "description": "Discover our air incident management services: passengers, hotel reservations, ground transportation and corporate events."
+    },
+    "contact": {
+      "title": "Contact - VIPAX",
+      "description": "Contact VIPAX for immediate air assistance. Adolfo Suárez Madrid-Barajas Airport. Available 24/7."
+    }
+  },
+  "whatsapp": {
+    "tooltip": "Need help? Write to us",
+    "status": "Usually online",
+    "welcome": "Hello! 👋 How can we help you? Select an option or write to us directly.",
+    "startChat": "Start chat",
+    "defaultMessage": "Hello, I would like to receive information about VIPAX services.",
+    "quick": {
+      "flight": "Flight incident",
+      "hotel": "Hotel reservation",
+      "transport": "Transportation",
+      "general": "General inquiry"
+    },
+    "messages": {
+      "flight": "Hello, I have a flight incident and need assistance. Can you help me?",
+      "hotel": "Hello, I need to make a hotel reservation for affected passengers.",
+      "transport": "Hello, I need information about ground transportation services.",
+      "general": "Hello, I would like to receive information about VIPAX services."
+    }
+  },
+  "calculator": {
+    "title": "Compensation Calculator",
+    "subtitle": "Check if you are entitled to compensation under European Regulation 261/2004",
+    "flightDistance": "Flight distance",
+    "delayHours": "Hours of delay",
+    "issueType": "Issue type",
+    "calculate": "Calculate compensation",
+    "result": "Estimated compensation",
+    "currency": "EUR",
+    "eligible": "You are entitled to compensation!",
+    "notEligible": "Sorry, you do not meet the requirements for compensation.",
+    "selectOption": "Select option",
+    "issues": {
+      "cancellation": "Flight cancellation",
+      "delay": "Delay over 3 hours",
+      "deniedBoarding": "Denied boarding",
+      "missedConnection": "Missed connection"
+    },
+    "distances": {
+      "short": "Less than 1,500 km",
+      "medium": "1,500 - 3,500 km",
+      "long": "More than 3,500 km"
+    },
+    "info": "Compensation varies depending on flight distance and delay time. This calculation is for guidance only.",
+    "pageTag": "Compensation calculator",
+    "infoTitle": "When are you entitled to compensation?",
+    "infoText1": "Under European Regulation 261/2004, air passengers are entitled to compensation in case of flight cancellation, delay of more than 3 hours, or denied boarding due to overbooking.",
+    "infoText2": "The compensation amount depends on the flight distance and is not based on the ticket price. It is a right that all airlines must comply with.",
+    "infoText3": "If you think you may be entitled to compensation, use our calculator or contact us for personalized advice.",
+    "rulesTitle": "When can you claim?",
+    "rules": {
+      "r1": "Flight cancellation without 14 days advance notice",
+      "r2": "Delay of more than 3 hours at final destination",
+      "r3": "Denied boarding due to overbooking",
+      "r4": "Missed connection due to delay of first flight"
+    },
+    "amountsTitle": "Compensation amounts",
+    "table": {
+      "distance": "Flight distance",
+      "amount": "Compensation"
+    }
+  },
+  "seo": {
+    "calculator": {
+      "title": "Compensation Calculator - VIPAX",
+      "description": "Calculate if you are entitled to compensation for flight cancellation or delay under European Regulation 261/2004."
+    }
+  }
+}

@@ -1,8 +1,11 @@
 import Link from 'next/link'
 import ScrollReveal from './ScrollReveal'
+import { useLanguage } from '../context/LanguageContext'
 import styles from './CTA.module.css'
 
 export default function CTA() {
+  const { t } = useLanguage()
+
   return (
     <section className={styles.cta}>
       <div className={styles.bgPattern} aria-hidden="true" />
@@ -10,16 +13,15 @@ export default function CTA() {
         <ScrollReveal direction="up">
           <div className={styles.content}>
             <h2 className={styles.title}>
-              ¿Necesitas asistencia{' '}
-              <span className={styles.highlight}>inmediata</span>?
+              {t('cta.titleBefore')}{' '}
+              <span className={styles.highlight}>{t('cta.titleHighlight')}</span>?
             </h2>
             <p className={styles.subtitle}>
-              En VIPAX estamos preparados para atender cada detalle. Contacta con nuestro
-              equipo y recibe solución en minutos. Disponible 24/7.
+              {t('cta.subtitle')}
             </p>
             <div className={styles.actions}>
               <Link href="/contact" className={styles.primaryBtn}>
-                Conoce nuestros servicios
+                {t('cta.ctaPrimary')}
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />

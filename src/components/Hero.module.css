@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-white) 50%, var(--color-surface) 100%);
+}
+
 .bgPattern {
   position: absolute;
   inset: 0;
@@ -44,6 +48,12 @@
   margin-bottom: var(--space-6);
 }
 
+[data-theme="dark"] .badge {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text);
+}
+
 .badgeDot {
   width: 8px;
   height: 8px;
@@ -61,7 +71,7 @@
   font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
   font-weight: var(--weight-extrabold);
   line-height: 1.15;
-  color: var(--color-dark);
+  color: var(--color-heading);
   margin-bottom: var(--space-6);
   letter-spacing: -0.02em;
 }
@@ -121,6 +131,12 @@
   transition: var(--transition-base);
 }
 
+[data-theme="dark"] .secondaryBtn {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
 .secondaryBtn:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
@@ -161,7 +177,7 @@
 }
 
 .trustText strong {
-  color: var(--color-dark);
+  color: var(--color-heading);
   font-weight: var(--weight-bold);
 }
 
@@ -206,6 +222,10 @@
   animation: float 5s ease-in-out infinite reverse;
 }
 
+[data-theme="dark"] .floatingCard {
+  background: var(--color-surface);
+}
+
 .floatingIcon {
   width: 44px;
   height: 44px;
@@ -226,7 +246,7 @@
 .floatingTitle {
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
-  color: var(--color-dark);
+  color: var(--color-heading);
 }
 
 .floatingDesc {

@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../context/LanguageContext'
 import styles from './ContactForm.module.css'
 
 export default function ContactForm() {
+  const { t } = useLanguage()
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
   const [status, setStatus] = useState(null)
   const [focused, setFocused] = useState(null)
@@ -26,7 +28,7 @@ export default function ContactForm() {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={`${styles.field} ${focused === 'name' || form.name ? styles.focused : ''} ${focused === 'name' ? styles.active : ''}`}>
-        <label className={styles.label}>Nombre completo *</label>
+        <label className={styles.label}>{t('contact.form.name')} *</label>
         <input
           className={styles.input}
           value={form.name}
@@ -53,7 +55,7 @@ export default function ContactForm() {
       </div>
 
       <div className={`${styles.field} ${focused === 'phone' || form.phone ? styles.focused : ''} ${focused === 'phone' ? styles.active : ''}`}>
-        <label className={styles.label}>Teléfono</label>
+        <label className={styles.label}>{t('contact.form.phone')}</label>
         <input
           className={styles.input}
           value={form.phone}
@@ -65,7 +67,7 @@ export default function ContactForm() {
       </div>
 
       <div className={`${styles.field} ${styles.fullWidth} ${focused === 'message' || form.message ? styles.focused : ''} ${focused === 'message' ? styles.active : ''}`}>
-        <label className={styles.label}>Mensaje *</label>
+        <label className={styles.label}>{t('contact.form.message')} *</label>
         <textarea
           className={styles.textarea}
           value={form.message}
@@ -88,7 +90,7 @@ export default function ContactForm() {
         {status === 'loading' ? (
           <span className={styles.spinner} />
         ) : (
-          'Enviar mensaje'
+          t('contact.form.submit')
         )}
       </motion.button>
 
@@ -98,7 +100,7 @@ export default function ContactForm() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Mensaje enviado correctamente. Responderemos pronto.
+          {t('contact.form.success')}
         </motion.div>
       )}
       {status === 'error' && (
@@ -107,7 +109,7 @@ export default function ContactForm() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Error al enviar. Por favor, inténtalo de nuevo.
+          {t('contact.form.error')}
         </motion.div>
       )}
     </form>

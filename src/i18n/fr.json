@@ -1,0 +1,349 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "calculator": "Calculateur",
+    "contact": "Contact",
+    "contactCta": "Contacter"
+  },
+  "theme": {
+    "dark": "Mode sombre",
+    "light": "Mode clair",
+    "toggleDark": "Passer en mode sombre",
+    "toggleLight": "Passer en mode clair"
+  },
+  "hero": {
+    "badge": "Assistance aérienne 24/7",
+    "titleBefore": "Gestion des incidents",
+    "titleHighlight": "aériens",
+    "titleAfter": "et logistique d'entreprise",
+    "subtitle": "Chez VIPAX, nous gérons de manière agile et efficace toute assistance aux passagers avant, pendant et après l'opération. Nous nous occupons du transport, de l'hébergement et de la restauration, offrant une solution complète et efficace qui garantit le bien-être et minimise l'impact opérationnel pour la compagnie aérienne conformément au Règlement européen 261/2004.",
+    "ctaPrimary": "Découvrir nos services",
+    "ctaSecondary": "À propos",
+    "trustText": "compagnies aériennes nous font confiance",
+    "floatingTitle": "Résolution immédiate",
+    "floatingDesc": "Conformité Règlement UE 261/2004",
+    "imageAlt": "VIPAX assistance aérienne"
+  },
+  "stats": {
+    "experience": "Années d'expérience",
+    "passengers": "Passagers assistés",
+    "airlines": "Compagnies partenaires",
+    "satisfaction": "Satisfaction client"
+  },
+  "services": {
+    "tag": "Nos services",
+    "titleBefore": "Solutions complètes pour l'",
+    "titleHighlight": "industrie aéronautique",
+    "subtitle": "Chez VIPAX, nous gérons de manière agile et efficace toute assistance aux passagers, offrant une solution complète qui garantit le bien-être et minimise l'impact opérationnel.",
+    "cta": "Découvrir nos services",
+    "passengerManagement": {
+      "title": "Gestion intégrale des passagers",
+      "desc": "Nous sommes spécialisés dans l'assistance aux passagers affectés par tout type d'incident opérationnel : surebooking, annulations de vols, pertes de connexion et déroutes de vols."
+    },
+    "hotelReservations": {
+      "title": "Réservations hôtelières",
+      "desc": "Service complet de gestion des réservations hôtelières pour les passagers de vols affectés, les équipages, les employés de compagnies aériennes et les groupes organisés."
+    },
+    "groundTransport": {
+      "title": "Transport terrestre",
+      "desc": "Solutions de transport terrestre efficaces adaptées à chaque situation, des annulations de vols aux événements d'entreprise avec un large réseau de fournisseurs certifiés."
+    },
+    "corporateEvents": {
+      "title": "Événements d'entreprise",
+      "desc": "Organisation de réunions, congrès, conventions, voyages d'incitation et team buildings. Gestion des espaces, restauration, technologie et coordination sur site."
+    }
+  },
+  "howItWorks": {
+    "tag": "Comment ça marche",
+    "titleBefore": "Trois étapes vers la",
+    "titleHighlight": "résolution",
+    "step1": {
+      "title": "Vous nous contactez",
+      "desc": "Appelez-nous ou envoyez un message. Notre équipe est disponible 24/7 pour traiter tout incident immédiatement."
+    },
+    "step2": {
+      "title": "Nous gérons la solution",
+      "desc": "Nous coordonnons l'hébergement, le transport et l'assistance immédiatement. Nous nous occupons de tout avec un large réseau de fournisseurs certifiés."
+    },
+    "step3": {
+      "title": "Résolution garantie",
+      "desc": "Le passager reçoit des soins complets. Nous garantissons des solutions rapides et la meilleure alternative pour chaque situation."
+    }
+  },
+  "testimonials": {
+    "tag": "Témoignages",
+    "titleBefore": "Ce que disent nos",
+    "titleHighlight": "clients",
+    "testimonial": "Témoignage",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "testimonial1": {
+      "text": "VIPAX a transformé notre gestion des incidents. Ils ont résolu une annulation massive de 200 passagers en moins de 4 heures. Leur professionnalisme est exceptionnel.",
+      "author": "María García",
+      "role": "Directrice des opérations",
+      "company": "Air Europa"
+    },
+    "testimonial2": {
+      "text": "La coordination hôtelière et de transport est impeccable. Nous travaillons avec eux depuis 3 ans et la satisfaction de nos passagers s'est considérablement améliorée.",
+      "author": "Carlos Ruiz",
+      "role": "Directeur du service client",
+      "company": "Iberia Express"
+    },
+    "testimonial3": {
+      "text": "Lorsque nous avons eu une urgence avec 150 membres d'équipage bloqués, VIPAX a trouvé des solutions en quelques minutes. Leur réseau d'hôtels et de transport est impressionnant.",
+      "author": "Ana Martínez",
+      "role": "Chef de quart",
+      "company": "Vueling"
+    }
+  },
+  "trust": {
+    "tag": "Confiance",
+    "titleBefore": "Notre relation étroite avec les",
+    "titleHighlight": "compagnies aériennes",
+    "titleAfter": "nous permet de gérer les incidents rapidement et efficacement",
+    "badgeTitle": "Règlement européen 261/2004",
+    "badgeDesc": "Conformité garantie dans chaque assistance"
+  },
+  "cta": {
+    "titleBefore": "Besoin d'une assistance",
+    "titleHighlight": "immédiate",
+    "titleAfter": " ?",
+    "subtitle": "Chez VIPAX, nous sommes prêts à gérer chaque détail. Contactez notre équipe et recevez une solution en quelques minutes. Disponible 24/7.",
+    "ctaPrimary": "Découvrir nos services"
+  },
+  "footer": {
+    "brandDesc": "Solutions complètes de gestion des incidents aériens et de logistique d'entreprise. Conformité au Règlement européen 261/2004.",
+    "location": "Aéroport Adolfo Suárez Madrid-Barajas",
+    "servicesTitle": "Services",
+    "companyTitle": "Entreprise",
+    "contactTitle": "Contact",
+    "airport": "Aéroport Madrid-Barajas",
+    "available247": "Disponible 24/7",
+    "copyright": "Tous droits réservés.",
+    "legalNotice": "Mentions légales",
+    "privacyPolicy": "Politique de confidentialité",
+    "mapTitle": "Emplacement VIPAX - Aéroport Madrid-Barajas",
+    "services": {
+      "passengerManagement": "Gestion des passagers",
+      "hotelReservations": "Réservations hôtelières",
+      "groundTransport": "Transport terrestre",
+      "corporateEvents": "Événements d'entreprise"
+    },
+    "company": {
+      "home": "Accueil",
+      "about": "À propos",
+      "services": "Services",
+      "contact": "Contact"
+    }
+  },
+  "contact": {
+    "tag": "Contact",
+    "titleBefore": "Contactez",
+    "titleHighlight": "nous",
+    "titleAfter": "",
+    "subtitle": "Notre équipe est disponible 24/7 pour résoudre tout incident.",
+    "infoTitle": "Entrer en contact",
+    "infoDesc": "Nous sommes là pour vous aider. Contactez-nous par l'un de ces moyens.",
+    "followUs": "Suivez-nous",
+    "formTitle": "Envoyez-nous un message",
+    "info": {
+      "phone": {
+        "label": "Téléphone"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "location": {
+        "label": "Emplacement",
+        "value": "Aéroport Adolfo Suárez Madrid-Barajas"
+      },
+      "availability": {
+        "label": "Disponibilité"
+      }
+    },
+    "form": {
+      "name": "Nom complet",
+      "phone": "Téléphone",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "success": "Message envoyé avec succès. Nous répondrons bientôt.",
+      "error": "Erreur lors de l'envoi. Veuillez réessayer."
+    }
+  },
+  "about": {
+    "tag": "À propos",
+    "titleBefore": "Bienvenue chez",
+    "titleHighlight": "VIPAX",
+    "subtitle": "Experts en assistance aéroportuaire. Nous travaillons pour offrir un service d'excellence dans la gestion des passagers et des équipages dans les aéroports.",
+    "aboutTitle": "Qui sommes-nous chez VIPAX ?",
+    "aboutText1": "Nous sommes une équipe avec une vaste expérience dans le secteur aéronautique et hôtelier, spécialisés dans les IROPS. Notre relation étroite avec les compagnies aériennes et la connaissance du travail avec les meilleurs fournisseurs nous permet de gérer les incidents rapidement et efficacement.",
+    "aboutText2": "Nous garantissons des solutions rapides et efficaces en hébergement et transport, assurant toujours la meilleure alternative pour chaque situation.",
+    "valuesTag": "Nos valeurs",
+    "valuesTitle": "Prêt à optimiser votre expérience client ?",
+    "valuesSubtitle": "Découvrez comment nos services peuvent faire la différence en cas de contingence. Chez VIPAX, nous sommes prêts à gérer chaque détail.",
+    "ctaTitle": "Besoin de nos services ?",
+    "ctaDesc": "Contactez-nous et découvrez comment nous pouvons vous aider.",
+    "ctaBtn": "Nous contacter",
+    "values": {
+      "experience": {
+        "title": "Expérience",
+        "desc": "Vaste expérience dans le secteur aéronautique et hôtelier, spécialisés dans les IROPS."
+      },
+      "closeness": {
+        "title": "Proximité",
+        "desc": "Relation étroite avec les compagnies aériennes et connaissance du secteur."
+      },
+      "network": {
+        "title": "Réseau de fournisseurs",
+        "desc": "Travailler avec les meilleurs fournisseurs pour gérer les incidents rapidement et efficacement."
+      },
+      "solutions": {
+        "title": "Solutions rapides",
+        "desc": "Nous garantissons des solutions efficaces en hébergement et transport, la meilleure alternative pour chaque situation."
+      }
+    }
+  },
+  "servicesDetail": {
+    "tag": "Nos services",
+    "titleBefore": "Solutions",
+    "titleHighlight": "complètes",
+    "titleAfter": "pour l'industrie aéronautique",
+    "subtitle": "Chez VIPAX, nous gérons de manière agile et efficace toute assistance aux passagers, offrant une solution complète qui garantit le bien-être et minimise l'impact opérationnel.",
+    "ctaTitle": "Besoin d'une assistance immédiate ?",
+    "ctaDesc": "Contactez notre équipe et recevez une solution en quelques minutes. Disponible 24/7.",
+    "ctaBtn": "Contacter maintenant",
+    "passengerManagement": {
+      "title": "Gestion intégrale des passagers",
+      "desc": "Nous sommes spécialisés dans l'assistance aux passagers affectés par tout type d'incident opérationnel. Nous agissons immédiatement pour coordonner l'hébergement, le transport et l'assistance, garantissant une solution rapide et efficace.",
+      "f1": "Surebooking",
+      "f2": "Annulations de vols",
+      "f3": "Pertes de connexion",
+      "f4": "Déroutes de vols",
+      "f5": "Coordination hébergement et transport",
+      "f6": "Protection de l'image de la compagnie"
+    },
+    "hotelReservations": {
+      "title": "Réservations hôtelières",
+      "desc": "Service complet de gestion des réservations hôtelières pour les passagers de vols affectés, les équipages, les employés de compagnies aériennes et les groupes organisés. Nous collaborons avec un large réseau d'hôtels dans différents points de la ville.",
+      "f1": "Large réseau d'hôtels partenaires",
+      "f2": "Passagers de vols affectés",
+      "f3": "Équipages et employés",
+      "f4": "Groupes organisés",
+      "f5": "Rapidité et efficacité",
+      "f6": "Attention personnalisée"
+    },
+    "groundTransport": {
+      "title": "Transport terrestre",
+      "desc": "Solutions de transport terrestre efficaces adaptées à chaque situation, des annulations de vols aux événements d'entreprise. Nous travaillons avec un large réseau de fournisseurs certifiés.",
+      "f1": "Transferts individuels",
+      "f2": "Groupes de passagers",
+      "f3": "Équipages aériens",
+      "f4": "Fournisseurs certifiés",
+      "f5": "Service sûr et ponctuel",
+      "f6": "Couverture nationale et internationale"
+    },
+    "corporateEvents": {
+      "title": "Événements d'entreprise",
+      "desc": "Nous transformons les idées en expériences mémorables. Organisation complète de réunions, congrès, conventions, voyages d'incitation et team buildings.",
+      "f1": "Réunions, congrès et conventions",
+      "f2": "Voyages d'incitation",
+      "f3": "Team buildings et activités motivationnelles",
+      "f4": "Gestion des espaces et restauration",
+      "f5": "Technologie et aménagement",
+      "f6": "Coordination et supervision sur site"
+    }
+  },
+  "notFound": {
+    "title": "Page non trouvée",
+    "description": "Désolé, la page que vous recherchez n'existe pas ou a été déplacée.",
+    "backToHome": "Retour à l'accueil"
+  },
+  "seo": {
+    "home": {
+      "title": "VIPAX - Gestion des incidents aériens",
+      "description": "Solutions complètes de gestion des incidents aériens, réservations hôtelières et transport pour les compagnies aériennes et les passagers. Disponible 24/7.",
+      "ogDescription": "Coordination rapide de l'hébergement, du transport et de l'assistance pour les passagers et les compagnies aériennes."
+    },
+    "about": {
+      "title": "À propos - VIPAX",
+      "description": "Découvrez VIPAX. Équipe avec une vaste expérience dans le secteur aéronautique et hôtelier, spécialisés dans les IROPS."
+    },
+    "services": {
+      "title": "Services - VIPAX",
+      "description": "Découvrez nos services de gestion des incidents aériens : passagers, réservations hôtelières, transport terrestre et événements d'entreprise."
+    },
+    "contact": {
+      "title": "Contact - VIPAX",
+      "description": "Contactez VIPAX pour une assistance aérienne immédiate. Aéroport Adolfo Suárez Madrid-Barajas. Disponible 24/7."
+    }
+  },
+  "whatsapp": {
+    "tooltip": "Besoin d'aide ? Écrivez-nous",
+    "status": "En ligne habituellement",
+    "welcome": "Bonjour ! 👋 Comment pouvons-nous vous aider ? Sélectionnez une option ou écrivez-nous directement.",
+    "startChat": "Démarrer le chat",
+    "defaultMessage": "Bonjour, je souhaite recevoir des informations sur les services de VIPAX.",
+    "quick": {
+      "flight": "Incident de vol",
+      "hotel": "Réservation hôtelière",
+      "transport": "Transport",
+      "general": "Demande générale"
+    },
+    "messages": {
+      "flight": "Bonjour, j'ai un incident de vol et j'ai besoin d'assistance. Pouvez-vous m'aider ?",
+      "hotel": "Bonjour, je dois effectuer une réservation hôtelière pour des passagers affectés.",
+      "transport": "Bonjour, j'ai besoin d'informations sur les services de transport terrestre.",
+      "general": "Bonjour, je souhaite recevoir des informations sur les services de VIPAX."
+    }
+  },
+  "calculator": {
+    "title": "Calculateur d'indemnisation",
+    "subtitle": "Vérifiez si vous avez droit à une indemnisation selon le Règlement européen 261/2004",
+    "flightDistance": "Distance du vol",
+    "delayHours": "Heures de retard",
+    "issueType": "Type d'incident",
+    "calculate": "Calculer l'indemnisation",
+    "result": "Indemnisation estimée",
+    "currency": "EUR",
+    "eligible": "Vous avez droit à une indemnisation !",
+    "notEligible": "Désolé, vous ne remplissez pas les conditions pour une indemnisation.",
+    "selectOption": "Sélectionner une option",
+    "issues": {
+      "cancellation": "Annulation de vol",
+      "delay": "Retard de plus de 3 heures",
+      "deniedBoarding": "Refus d'embarquement",
+      "missedConnection": "Perte de connexion"
+    },
+    "distances": {
+      "short": "Moins de 1 500 km",
+      "medium": "1 500 - 3 500 km",
+      "long": "Plus de 3 500 km"
+    },
+    "info": "L'indemnisation varie selon la distance du vol et le temps de retard. Ce calcul est indicatif.",
+    "pageTag": "Calculateur d'indemnisation",
+    "infoTitle": "Quand avez-vous droit à une indemnisation ?",
+    "infoText1": "Selon le Règlement européen 261/2004, les passagers aériens ont droit à une indemnisation en cas d'annulation de vol, de retard de plus de 3 heures ou de refus d'embarquement pour surréservation.",
+    "infoText2": "Le montant de l'indemnisation dépend de la distance du vol et ne dépend pas du prix du billet. C'est un droit que toutes les compagnies aériennes doivent respecter.",
+    "infoText3": "Si vous pensez avoir droit à une indemnisation, utilisez notre calculateur ou contactez-nous pour des conseils personnalisés.",
+    "rulesTitle": "Quand pouvez-vous réclamer ?",
+    "rules": {
+      "r1": "Annulation de vol sans préavis de 14 jours",
+      "r2": "Retard de plus de 3 heures à la destination finale",
+      "r3": "Refus d'embarquement pour surréservation",
+      "r4": "Perte de connexion due au retard du premier vol"
+    },
+    "amountsTitle": "Montants d'indemnisation",
+    "table": {
+      "distance": "Distance du vol",
+      "amount": "Indemnisation"
+    }
+  },
+  "seo": {
+    "calculator": {
+      "title": "Calculateur d'indemnisation - VIPAX",
+      "description": "Calculez si vous avez droit à une indemnisation pour annulation ou retard de vol selon le Règlement européen 261/2004."
+    }
+  }
+}
